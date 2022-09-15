@@ -1,0 +1,20 @@
+header {
+    height: 15vh;
+    border: 1px solid black;
+    display:flex ;
+    justify-content: space-around;
+}
+.header {
+    
+    display:flex ;
+   
+    
+}
+
+
+header img {
+
+    height: 100%;
+    
+}
+
