@@ -4,29 +4,88 @@
     text-align: center;
     justify-content: space-around;
     align-items: center; 
-    height: 100px;
+    height: 50px;  
 }
  .Footer > .Github {
-    width: 80px;
-    height: 100%;
- 
+    width: 50px;
+    height: 100%; 
 }
 .Github-1{
-    width: 80px;
+    width: 50px;
     height: 100%;   
 }
 .Github>.Github-1> a > img{
     width: 100%;
     height: 100%;
 }
+.Github>.Github-1> a > img:hover{
+    transition: 0.3s all ease-in-out;
+    transform: scale(1.1);
+}
 .general-footer >.contacto >h2{
   text-align: center;
-  font-size: 2rem;
+  font-size: 28px;
   font-weight: bolder;
-  margin: 24px 0 5rem 0;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  
+  margin: 0 0 50px 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
 }
-.Github > .Github-1 > h3 {
+.Github > h3 {
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 22px;
+}
+@media (max-width: 992px){
+    .general-footer >.contacto >h2{
+        font-size: 26px;        
+    }
+    .Footer{
+        height: 55px;
+    }    
+    .Github-1{
+        width: 55px;
+    }    
+    .Github > h3{
+        font-size: 20px;
+    }
+}
+@media (max-width: 768px){
+    .general-footer >.contacto >h2{
+        font-size: 24px;
+    }
+    .Footer{
+        height: 50px;
+    }    
+    .Github-1{
+        width: 50px;
+    }
+    .Github > h3{
+        font-size: 18px;
+    }
+}
+@media (max-width: 576px){
+    .general-footer >.contacto >h2{
+        font-size: 20px;
+    }
+    .Footer{
+        height: 45px;
+    }    
+    .Github-1{
+        width: 45px;
+    }
+    .Github > h3{
+        font-size: 13px;
+    }
+}
+@media (max-width: 480px){
+    .general-footer >.contacto >h2{
+        font-size: 18px;
+    }
+    .Footer{
+        height: 40px;
+    }    
+    .Github-1{
+        width: 40px;
+    }
+    .Github > h3{
+        font-size: 11px;
+    }
 }

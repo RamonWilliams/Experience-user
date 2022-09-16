@@ -10,7 +10,7 @@ const ExperienceCard = ({ experience }) => {
         <figure className="Experience-card">
             <img className="card_image" src={experience.image} alt={experience.name} />
             <h4 className="name">{experience.name}</h4>  
-            <p>{experience.price}</p>   
+            <p>{experience.puntuation}</p>   
         </figure>
     </Link>
   );

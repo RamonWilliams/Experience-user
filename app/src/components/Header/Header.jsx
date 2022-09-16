@@ -21,7 +21,9 @@ const Header = () => {
 return (
 <header>
   <div  className='header-img' >
-<img src="../../../public/images/Logo.jpg" alt="Logo" />
+    <div className='image'>
+     <img src="../../../public/images/Logo.jpg" alt="Logo" />
+    </div>
 </div>
 
     {/* { <Home/>?(<input type="text" className='input-header'/> === false ) : (null)} */}

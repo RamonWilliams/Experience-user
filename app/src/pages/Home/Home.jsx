@@ -7,20 +7,21 @@ const Home = () => {
     <section className='home'>
       <div className="parallax">
         <div className='parallax-inner'>
-        <h2>Da un paso atrás, evalúa lo que es importante, y disfruta de la vida, ninguna persona es un fracaso si disfruta de la vida.</h2>
+         <h2>Tómate la diversión en serio. Haz tiempo en tu vida para el disfrute. Haz algo divertido y emocionante.</h2>
         </div>   
       </div> 
+      <h1>Descubre Experiencias Increíbles</h1>
       
       <div className='gallery' >
        
-          <div className='photo-2'>
-            <img src="../../../public/galería/galería1.jpg" alt="Photo1" />
+          <div className='photo-2'>           
+            <img src="../../../public/galería/galería10.jpg" alt="Photo10" />
           </div>
           <div className='photo'>
-            <img src="../../../public/galería/galería2.jpg" alt="Photo2" />
+            <img src="../../../public/galería/galería11.jpg" alt="Photo11" />
           </div>
           <div className='photo'>
-            <img src="../../../public/galería/galería3.jpg" alt="Photo3" />
+            <img src="../../../public/galería/galería12.jpg" alt="Photo12" />
           </div>
        
           <div className='photo'>
@@ -30,7 +31,7 @@ const Home = () => {
             <img src="../../../public/galería/galería5.jpg" alt="Photo5" />
           </div>
           <div className='photo-2'>
-           <img src="../../../public/galería/galería8.jpg" alt="Photo8" />
+          <img src="../../../public/galería/galería1.jpg" alt="Photo1" />
           </div>    
       </div>
     </section>
