@@ -13,6 +13,7 @@ import ExperienceDetail from "./pages/ExperienceDetail/ExperienceDetail"
 import PdiDetail from "./pages/PdiDetail/PdiDetail"
 import Profile from "./pages/Profile/Profile"
 import './App.css'
+import Pdi from "./pages/Pdi/Pdi"
 
 
 
@@ -27,13 +28,14 @@ const App = () => {
         <Router>
           <Header />
           <Routes>
+            
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Form />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<RequireAuth> <Profile /> </RequireAuth>} /> 
             <Route path="/experience" element={<Experience />} />
-            <Route path="/experience/:id" element={<ExperienceDetail />} />
-           
+            <Route path="/experience/:id" element={<ExperienceDetail />} /> 
+            <Route path="/pdi" element={<Pdi />} />          
             <Route path="/pdi/:id" element={<PdiDetail />} />
          
           </Routes>

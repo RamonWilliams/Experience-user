@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { API } from "../../services/API";
 import PdiCard from '../../components/PdiCard/PdiCard';
 import { Link } from 'react-router-dom';
+import "./Pdi.css"
 
 const Pdi = () => {
   const [allPdis, setAllPdis] = useState([]);
@@ -21,7 +22,7 @@ const Pdi = () => {
 
 
   return (
-    <section>
+    <section className='pdi'>
      
       <input type="text" className='input-pdi'/>
       <Link to="/pdi/create"> <p> Quieres crear tu Punto de interés</p>    </Link>

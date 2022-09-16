@@ -1,9 +1,51 @@
-.home {
-    height: 75vh;
-    border: 1px solid black;
-}
 .div-1{
     width:900px;
     height: 300px;
     border: 2px solid black;
 }
+.parallax {
+    background: url("https://cdn.discordapp.com/attachments/997843641752096798/1020332564315123834/unknown.png") repeat
+      fixed 100%;
+    background-size: cover;
+    color: black;
+    margin-bottom: 3rem;    
+  }  
+  .parallax-inner {
+    padding-top: 20%;
+    padding-bottom: 20%;   
+  }
+  .parallax-inner h2{
+      text-align: center;
+      font-size: 2rem;
+      font-family: Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS' 'sans-serif;
+      color: rgba(0, 0, 0, 0.884);
+  }
+  .gallery{
+   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+  }  
+  .photo-2{
+      width: 830px;
+      height: 500px;     
+    }
+    .photo-2> img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 25px;
+    }
+   .photo{     
+     height: 500px;
+     width: 400px;
+   }
+   .photo>img{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     border-radius: 25px;
+   }
+   
