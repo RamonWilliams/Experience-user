@@ -1,5 +1,4 @@
 import { useState, createContext } from "react";
-
 export const JwtContext = createContext();
 
 export const JwtContextProvider = ({ children }) => {

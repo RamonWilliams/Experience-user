@@ -3,6 +3,9 @@ import "./Header.css"
 import { Link, useNavigate} from 'react-router-dom'
 import { useContext } from "react";
 import { JwtContext } from "../../context/jwtContext";
+import Home from '../../pages/Home/Home';
+import Experience from '../../pages/Experience/Experience';
+import Pdi from '../../pages/Pdi/Pdi';
 
 
 
@@ -13,56 +16,58 @@ const Header = () => {
   const { user, logout } = useContext(JwtContext);
   let navigate = useNavigate();
 
+  
+
 return (
 <header>
-<img src="https://img2.freepng.es/20190420/uxl/kisspng-travel-agent-destination-travel-world-package-tour-5cbb1818bdafd8.510190491555765272777.jpg" alt="" />
+<img src="../../../public/images/Logo.jpg" alt="Logo" />
 
-<input type="text"/>
+    {/* { <Home/>?(<input type="text" className='input-header'/> === false ) : (null)} */}
 
-  <ul className='header'>
-   
-   
     
-    <li>
-     <Link to="/login"> <button>Login</button></Link>
-    </li>
+   
+  <ul className='header'>    
+    
+  <Link to="/"> <li> <button>Home</button> </li> </Link>
 
-    <li>
+  {user?( <><li>
+      <Link to="/experience"> 
+          <button> Experiencias </button> 
+       </Link>
+    </li> </>):(null)}
+
+    {user?( <><li>
      <Link to="/profile"> <button>Perfil</button> </Link>
-    </li>
+    </li></>):null }
+    
+    {user ?(<>
+    {user.avatar !== "undefined" ? ( <img src={user?.avatar} alt="Avatar"/> 
+    ) : null}
+       <div>
+         <button onClick={() => logout() & navigate("/")}>Logout</button> 
+       </div>
+    </>)
+  : (
+    <ul>
+       <li>
+     <Link to="/login"> <button>Login</button></Link>
+    </li>       
 
     <li>
     <Link to="/register" ><button>Regístrate</button></Link>
     </li>
 
-    <li>
-     <Link to="/"> <button>Logout</button> </Link>
-    </li>
-
-    <li>
-      <Link to="/travel"> 
-          <button> Viajes </button> 
-       </Link>
-    </li>
-
-    <li>
-      <Link to="/hoteles"> 
-          <button> Hoteles </button> 
-       </Link>
-    </li>
-
+       </ul>
+  )  
+  }
+    
+     
     
     <li>
-      <Link to="/restaurants"> 
-          <button> Restaurantes </button> 
-       </Link>
-    </li>
-
-    <li>
-      <Link to="/pdis"> 
+      <Link to="/pdi"> 
           <button> Puntos de Interés </button> 
        </Link>
-    </li>
+    </li>   
 
   </ul>
 </header>

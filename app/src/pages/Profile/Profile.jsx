@@ -6,38 +6,39 @@ import { JwtContext } from "../../context/jwtContext";
 import { API } from "../../services/API";
 import "./Profile.css";
 
-//TODO: CAMBIAR DATOS DE USER POR EL NUEVO MODELO DE USER
+
 const Profile = () => {
     const { user, logout } = useContext(JwtContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
     let navigate = useNavigate();
 
-    const deleteUser = () => {
+    // const deleteUser = () => {
 
-        API.delete(` /user/${user._id}`).then((res) => {
-            console.log(res)
-            logout();
-            if (res) {
-                navigate("/");
+    //     API.delete(` /user/${user._id}`).then((res) => {
+    //         console.log(res)
+    //         logout();
+    //         if (res) {
+    //             navigate("/");
 
-            }
+    //         }
 
-        })
+    //     })
 
-    };
+    // };
 
     const defaultValues = {
         fullname: user.fullname,
         username: user.username,
-        password: user.password,
+        password: user.password,        
         email: user.email,
-        avatar: user.avatar,
-        nationality: user.nationality,
-        location: user.location,
-        address: user.address,
         description: user.description,
-        phone: user.phone,
-        description: user.description,
+
+        // avatar: user.avatar,       
+    //     nationality: user.nationality,
+    //     location: user.location,
+    //     address: user.address,    //   
+    //     phone: user.phone,
+    //     description: user.description,
 
     }
 
@@ -48,11 +49,7 @@ const Profile = () => {
         formData.append("username", data.username);
         formData.append("password", data.password);
         formData.append("email", data.email);
-        formData.append("avatar", data.avatar[0]);
-        formData.append("nationality", data.nationality);
-        formData.append("location", data.location);
-        formData.append("address", data.address);
-        formData.append("phone", data.phone);
+        formData.append("avatar", data.avatar[0]);     
         formData.append("description", data.description);
         API.patch(`/user/${user._id}`, formData).then((res) => {
             console.log(res)
@@ -74,8 +71,6 @@ const Profile = () => {
                     required: {
                         value: true,
                         message: "Necesitas este campo",
-
-
                     }
                 })} />
                 {errors.fullname && <span>{errors.fullname.message}</span>}
@@ -84,9 +79,7 @@ const Profile = () => {
                 <input type="text" id="username" name="username" placeholder="Nombre de usuario" {...register("username", {
                     required: {
                         value: true,
-                        message: "Necesitas este campo",
-
-                    }
+                        message: "Necesitas este campo",}
                 })} />
                 {errors.username && <span>{errors.username.message}</span>}
 
@@ -122,46 +115,7 @@ const Profile = () => {
 
                     }
                 })} />
-                {errors.avatar && <span>{errors.avatar.message}</span>}
-
-                <label htmlFor="nationality">Nacionalidad:</label>
-                <input nationality="text" id="nationality" name="nationality" placeholder="Nacionalidad" {...register("nationality", {
-                    required: {
-                        value: true,
-                        message: "Necesitas este campo",
-
-                    }
-                })} />
-                {errors.nationality && <span>{errors.nationality.message}</span>}
-
-                <label htmlFor="location">Localidad:</label>
-                <input type="text" id="location" name="location" placeholder="Localidad"{...register("location", {
-                    required: {
-                        value: true,
-                        message: "Necesitas este campo",
-
-                    }
-                })} /> {errors.location && <span>{errors.location.message}</span>}
-
-
-                <label htmlFor="address">Dirección:</label>
-                <input type="text" id="address" name="address" placeholder="Dirección"{...register("address", {
-                    required: {
-                        value: true,
-                        message: "Necesitas este campo",
-
-                    }
-                })} /> {errors.address && <span>{errors.address.message}</span>}
-
-
-                <label htmlFor="phone">Teléfono:</label>
-                <input type="text" id="phone" name="phone" placeholder="Teléfono"{...register("phone", {
-                    required: {
-                        value: true,
-                        message: "Necesitas este campo",
-
-                    }
-                })} /> {errors.phone && <span>{errors.phone.message}</span>}
+                {errors.avatar && <span>{errors.avatar.message}</span>}                
 
 
                 <label htmlFor="description">Descripción :</label>
@@ -173,6 +127,14 @@ const Profile = () => {
                     }
                 })} /> {errors.description && <span>{errors.description.message}</span>}
 
+                <label htmlFor="favoriteExperiencie">Experiencias Favoritas :</label>
+                <input type="text" id="favoriteExperience" name="favoriteExperience" placeholder="favoriteExperience "{...register("favoriteExperience", {
+                    required: {
+                        value: true,
+                        message: "Necesitas este campo",
+
+                    }
+                })} /> {errors.favoriteExperience && <span>{errors.favoriteExperience.message}</span>}     
 
                 <button type="submit" >Editar</button>
                 <button type="button" onClick={() => deleteUser(user)}>Borrar</button>

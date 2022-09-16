@@ -1,48 +1,74 @@
 import { API } from '../../services/API';
 import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import "./TravelDetail.css"
+import "./ExperienceDetail.css"
+import Pdi from '../Pdi/Pdi';
 
-const TravelDetail = () => {
+const ExperienceDetail = () => {
 
     const { id } = useParams();
+    const [ experience, setExperience ] = useState({});
+   
 
-    const [ travel, setTravel ] = useState([]);
-
-    const getTravel = async() => {
-        API.get(`/travel/${id}`).then(( res )=> {
-            setTravel( res.data.data.travel)
-            console.log(res.data.data.travel)
+    const getExperience = async() => {
+        API.get(`/experience/${id}`).then(( res )=> {
+            setExperience( res.data.data)
+         
+          
         })
-    }
+       
+    };
+    // const [pdis] = experience;
+    // console.log(pdis)
 
+
+  
     useEffect( () => {
-        getTravel();
-    }, [])
+        getExperience();
+      
+    }, []);
+     
 
+    
+   
+    
+    
+   
+   
   return (
-    <div className='contenedor'>
 
+   <div className='contenedor'>
+       
+        
+                 
         <div className='carta'>  
         <div className='lado   frente'>
-        <h2> Título: { travel.title } </h2>
-        <h3> País: { travel.country} </h3>
-        <p> Ciudad: { travel.city } </p>
-        <p> Fecha: { travel.date } </p>   
-        <p> Precio: {travel.price}</p>
-        <p>Puntuación{travel.puntuation}</p>
-        <p>Descripción: {travel.description}</p>
-        <p>Like: {travel.likes}</p>    
+        <h2> Nombre: { experience.name } </h2>
+        <h3> Localización: { experience.location} </h3>
+        <p>Descripción: {experience.description}</p>
+        <p> Precio: {experience.price}</p>
+        <p> Puntos de interés: </p> 
+       
+       
+            
+     
+
+      
         </div> 
 
         <div className='lado atras'> 
-        <img src={ travel.image } alt={ travel.title } />
+        <img src={ experience.image } alt={ experience.name } />
         </div>
         
 
         </div>
-    </div>
+      
+
+    </div>  
+
+
+ 
   )
 }
 
-export default TravelDetail
+export default ExperienceDetail

@@ -14,9 +14,8 @@ const OtherInfo = ({ saveUser, user }) => {
      <input type="file" id="avatar" name="avatar" placeholder="Sube tu avatar" onChange={handleInput} value={user.avatar ? user.avatar : ''}  />
       
 
-      <label htmlFor="nationality">Nacionalidad:</label>
-      <input nationality="text" id="nationality" name="nationality"  placeholder="Nacionalidad" onChange={handleInput} value={user.nationality? user.nationality : ''}  />
-      
+     <label htmlFor="description">Descripción :</label>
+     <input type="text" id="description" name="description"  placeholder="Descripción" onChange={handleInput} value={user.description ? user.description : ''}  /> 
 
     </div>
   )

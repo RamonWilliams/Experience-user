@@ -1,29 +1,29 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import { API } from "../../services/API";
-import TravelCard from '../../components/TravelCard/TravelCard';
+import ExperienceCard from '../../components/ExperienceCard/ExperienceCard';
 
 const Experience = () => {
-  const [allTravels, setAllTravels] = useState([]);
+  const [allExperiences, setAllExperiences] = useState([]);
 
 
-  const getAllTravels = async () => {
+  const getAllExperiences = async () => {
     API.get("/experience").then((res) => {
-      setAllTravels(res.data.data);
-      console.log(allTravels)
+      setAllExperiences(res.data.data);
+      console.log(allExperiences)
     });
   };
 
   useEffect(() => {
-    getAllTravels();
+    getAllExperiences();
   }, []);
 
 
   return (
     <section>
-
-      {allTravels.length ? allTravels.map((travel) => <TravelCard travel={travel} key={travel._id}
-      />) : <p>Loading Travel... </p>}
+      <input type="text" className='input-pdi'/> 
+      {allExperiences.length ? allExperiences.map((experience) => <ExperienceCard experience={experience} key={experience._id}
+      />) : <p>Loading Experience... </p>}
 
     </section>
 

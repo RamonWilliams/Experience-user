@@ -1,3 +1,9 @@
 .home {
     height: 75vh;
+    border: 1px solid black;
+}
+.div-1{
+    width:900px;
+    height: 300px;
+    border: 2px solid black;
 }

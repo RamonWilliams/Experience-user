@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import { API } from '../../../services/API';
 import OtherInfo from '../OtherInfo/Otherinfo';
 import PersonalInfo from '../Personalinfo/PersonalInfo';
@@ -23,7 +23,7 @@ const UserForm = () => {
 
   const sendInfo = async () => {
     console.log("Usuario Def", user)
-    API.post(`/user/register`,user).then ((res) => {
+    API.post(`/user/signup`,user).then ((res) => {
      
        if (res) {
         // Navigate("/login");
