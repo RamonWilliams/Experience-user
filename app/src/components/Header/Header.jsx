@@ -3,9 +3,7 @@ import "./Header.css"
 import { Link, useNavigate} from 'react-router-dom'
 import { useContext } from "react";
 import { JwtContext } from "../../context/jwtContext";
-import Home from '../../pages/Home/Home';
-import Experience from '../../pages/Experience/Experience';
-import Pdi from '../../pages/Pdi/Pdi';
+
 
 
 
@@ -51,7 +49,7 @@ return (
       </li>   
        */}
       {user ?(<>
-      {user.avatar !== "undefined" ? ( <img src={user?.avatar} alt="Avatar"/> 
+      {user.avatar !== "undefined" ? ( <img src={user.avatar} alt="Avatar"/> 
       ) : null}        
           <button onClick={() => logout() & navigate("/")} className='logout'>Logout</button>         
       </>)

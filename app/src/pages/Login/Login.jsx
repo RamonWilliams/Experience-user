@@ -27,6 +27,13 @@ const Login = () => {
     };
 
     return (
+
+
+    <div className="login-container">
+            <div className="frase-container">
+                <h1>Disfruta una nueva expericencia</h1>
+                <h2>Aprovecha cada dia, no te fies del mañana. Regala y comparte momentos.</h2>
+            </div>
         <section className="login">
             <h2>Por favor logueate</h2>
             <form onSubmit={handleSubmit(formSubmit)} className="formulario">
@@ -48,9 +55,11 @@ const Login = () => {
                 })} />
                 {errors.password && <span>{errors.password.message}</span>}
                 {errors.password && <span>{errors.password.message}</span>}
-                <button type="submit" className="lbutton">Login</button>
+                <button type="submit" className="button-login">Login</button>
             </form>
         </section>
+
+       </div> 
     );
 }
 

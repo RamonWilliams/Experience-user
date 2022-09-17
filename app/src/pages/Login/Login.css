@@ -1,3 +1,230 @@
+.login-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(https://images.pexels.com/photos/8266739/pexels-photo-8266739.jpeg?auto=compress&cs=tinysrgb&w=600);
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+}
+
+.frase-container {
+    width: 50%;
+    gap: 5px;
+    color: #fff;
+    margin-left: 40px;
+}
+
+.frase-container h1 {
+    font-size: 45px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 15rem;
+    margin-bottom: 20px;
+
+}
+
+.frase-container h2 {
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+
 .login {
-    height: 75vh;
+
+    display: flex;
+    margin-left: 12rem;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+    align-items: center;
+    height: 500px;
+    width: 450px;
+    margin: auto;
+    background: black;
+    padding: 10px 20px;
+    box-sizing: 20px;
+    border-radius: 7px;
+    opacity: 60%;
+}
+
+.formulario h2 {
+    font-size: 35px;
+    margin-bottom: 30px;
+
+}
+
+
+
+.formulario input {
+    width: 70%;
+    margin-bottom: 30px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #000;
+}
+
+.formulario label {
+    padding-bottom: 10px;
+    font-size: 25px;
+}
+.button-login {
+    outline: none;
+    text-decoration: none;
+    border: none;
+    width: 10rem;
+    padding: 0.5rem 2rem;
+    gap: 8rem;
+    background-color: rgb(249, 7, 7);
+    border-radius: 0.2rem;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.button-login :hover {
+    color: gray;
+    transform: scale(1.1);
+}
+
+@media (max-width: 992px) {
+
+    .frase-container h1 {
+        font-size: 30px;
+        margin-top: 2rem;
+        margin-bottom: 20px;
+        margin-left: 10rem;
+    }
+
+    .frase-container h2 {
+        font-size: 20px;
+        margin-left: 10rem;
+
+    }
+
+    .formulario {
+        height: 300px;
+        width: 300px;
+        margin-left: 4rem;
+        opacity: 70%;
+    }
+
+    .login-container {
+        height: 72vh;
+        background-position: center;
+
+
+    }
+
+    .formulario input {
+        width: 62%;
+        margin-bottom: 17px;
+        padding: 4px;
+        font-size: 12px;
+
+    }
+
+    .formulario label {
+        padding-bottom: 8px;
+        font-size: 18px;
+    }
+
+
+    .button-login {
+        width: 8rem;
+        padding: 0.2rem 1rem;
+        font-size: 20px;
+    }
+
+}
+
+
+
+@media(max-width: 768px) {
+    .frase-container h1 {
+        margin-left: 8rem;
+        font-size: 30px;
+        margin-top: 2rem;
+
+
+    }
+
+    .frase-container h2 {
+        display: none;
+
+    }
+
+    .formulario {
+        height: 310px;
+        width: 310px;
+        margin-left: -2rem;
+        margin-top: 0%;
+        opacity: 70%;
+    }
+
+    .login-container {
+        height: 70vh;
+        background-position: center;
+
+
+    }
+
+    .formulario input {
+        width: 62%;
+        margin-bottom: 17px;
+        padding: 4px;
+        font-size: 12px;
+
+    }
+
+    .formulario label {
+        padding-bottom: 8px;
+        font-size: 18px;
+    }
+
+
+    .button-login {
+        width: 8rem;
+        padding: 0.2rem 1rem;
+        font-size: 20px;
+    }
+}
+
+
+
+@media(max-width: 576px) {
+
+    .frase-container h1 {
+        display: none;
+
+    }
+
+    .formulario {
+        height: 400px;
+        width: 400px;
+        margin-left: -7rem;
+        margin-top: 0%;
+        opacity: 70%;
+    }
+
+    .login-container {
+        height: 73vh;
+
+    }
+
+
+
 }

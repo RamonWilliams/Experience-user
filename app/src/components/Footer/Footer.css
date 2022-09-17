@@ -1,21 +1,32 @@
-
 .Footer {
     display: flex;
     text-align: center;
     justify-content: space-around;
     align-items: center; 
-    height: 50px;  
+    height: 125px;  
+     
 }
- .Footer > .Github {
-    width: 50px;
-    height: 100%; 
+ .Github {
+    width: 300px;   
+    display: flex;    
+    height: 50%;
+    margin-bottom: 5px;
+}
+.Github > h3{
+    margin-left: 20px;
+    margin-top: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
 }
 .Github-1{
-    width: 50px;
-    height: 100%;   
+    width:40px;
+    height: 40px;      
 }
 .Github>.Github-1> a > img{
-    width: 100%;
+    width: 100%;  
+}
+.Github-2{
+    width: 50px;
     height: 100%;
 }
 .Github>.Github-1> a > img:hover{
@@ -28,10 +39,6 @@
   font-weight: bolder;
   margin: 0 0 50px 0;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
-}
-.Github > h3 {
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-font-size: 22px;
 }
 @media (max-width: 992px){
     .general-footer >.contacto >h2{
