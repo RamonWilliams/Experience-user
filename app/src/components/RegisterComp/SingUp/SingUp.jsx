@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "./SingUp.css"
 
 const SingUp = ({ saveUser, user }) => {
 
