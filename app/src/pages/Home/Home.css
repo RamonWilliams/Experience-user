@@ -5,7 +5,7 @@
 .home>h1{
   text-align: center;
   margin-bottom: 3rem;
-  font-size: 32px;
+  font-size: 28px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   
 }
@@ -19,9 +19,7 @@
       fixed 100%;
     background-size: cover;
     color: black;
-    margin-bottom: 3rem; 
-    
-    
+    margin-bottom: 3rem;     
   }  
 .parallax-inner {
     padding-top: 20%;
@@ -29,7 +27,7 @@
   }
 .parallax-inner h2{     
       text-align: center;
-      font-size: 24px;
+      font-size: 22px;
       font-family: Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS' 'sans-serif;
       color: rgba(0, 0, 0, 0.884);
       align-items: center;
@@ -66,7 +64,7 @@
    }
    @media (max-width: 992px){
     .home>h1{
-      font-size: 30px;
+      font-size: 28px;
     }
     .parallax-inner h2{
       font-size: 20px;      
@@ -114,7 +112,7 @@
       height: 200px;
     }
     .parallax{
-      background-position: bottom 50px right 0px
+      
     }
    }
    @media (max-width: 480px){

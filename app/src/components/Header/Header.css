@@ -48,8 +48,7 @@ li a button:hover{
 }
 
 .logout{
-    background: none;
-  
+    background: none;  
     padding: 5px;
     border-radius: 5px;
     font-size: 1.4rem;
@@ -82,7 +81,7 @@ li a button:hover{
         width: 100px;           
       }
     li a button{
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }   
 }
 @media(max-width: 576px){

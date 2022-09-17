@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { API } from "../../services/API";
 
-//TODO: CAMBIAR DATOS DE USER POR EL NUEVO MODELO DE USER - USERNAME && PASSWORD
+
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     let navigate = useNavigate();
@@ -31,8 +31,12 @@ const Login = () => {
 
     <div className="login-container">
             <div className="frase-container">
-                <h1>Disfruta una nueva expericencia</h1>
-                <h2>Aprovecha cada dia, no te fies del mañana. Regala y comparte momentos.</h2>
+                <div className='title'>
+                    <h1>Disfruta una nueva expericencia</h1>
+                </div>
+                <div className='title-2'>
+                    <h2>Aprovecha cada dia, no te fies del mañana. Regala y comparte momentos.</h2>
+                </div>
             </div>
             <section className="login">              
                 <form onSubmit={handleSubmit(formSubmit)} className="formulario">

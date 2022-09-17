@@ -1,12 +1,4 @@
-body {
-	text-align: center;
-	padding: 30px;
-	
-	font-family: Arial;
-  }
-  
-  .a-box {
-	
+ .a-box {	
 	display: inline-block;
 	width: 240px;
 	text-align: center;
