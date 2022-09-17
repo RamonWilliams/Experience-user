@@ -34,32 +34,31 @@ const Login = () => {
                 <h1>Disfruta una nueva expericencia</h1>
                 <h2>Aprovecha cada dia, no te fies del mañana. Regala y comparte momentos.</h2>
             </div>
-        <section className="login">
-            <h2>Por favor logueate</h2>
-            <form onSubmit={handleSubmit(formSubmit)} className="formulario">
-                <label htmlFor="username">Nombre de usuario:</label>
-                <input type="text" id="username" name="username" placeholder="Nombre de usuario" {...register("username", {
-                    required: {
-                        value: true,
-                        message: "Necesitas este campo",
-                    }
-                })} />
-                {errors.username && <span>{errors.username.message}</span>}
+            <section className="login">              
+                <form onSubmit={handleSubmit(formSubmit)} className="formulario">
+                    <label htmlFor="username">Nombre de usuario:</label>
+                    <input type="text" id="username" name="username" placeholder="Nombre de usuario" {...register("username", {
+                        required: {
+                            value: true,
+                            message: "Necesitas este campo",
+                        }
+                    })} />
+                    {errors.username && <span>{errors.username.message}</span>}
 
-                <label htmlFor="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="escribe tu contraseña" {...register("password", {
-                    required: {
-                        value: true,
-                        message: "La contraseña debe de tener al menos 6 caracteres",
-                    }
-                })} />
-                {errors.password && <span>{errors.password.message}</span>}
-                {errors.password && <span>{errors.password.message}</span>}
-                <button type="submit" className="button-login">Login</button>
-            </form>
-        </section>
+                    <label htmlFor="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="escribe tu contraseña" {...register("password", {
+                        required: {
+                            value: true,
+                            message: "La contraseña debe de tener al menos 6 caracteres",
+                        }
+                    })} />
+                    {errors.password && <span>{errors.password.message}</span>}
+                    {errors.password && <span>{errors.password.message}</span>}
+                    <button type="submit" className="button-login">Login</button>
+                </form>
+            </section>
 
-       </div> 
+        </div> 
     );
 }
 

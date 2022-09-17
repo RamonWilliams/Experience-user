@@ -9,11 +9,9 @@ const Footer = () => {
       
    
 
-      <div className='Footer'>
-
-      <div className='contacto'> 
+      <div className='Footer'>    
+      
       <h2>Contacta con Nosotros</h2>
-      </div>
         
       <div className='division'>
         <div className='Github' >
