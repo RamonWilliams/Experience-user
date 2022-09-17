@@ -113,6 +113,9 @@
       width: 240px;
       height: 200px;
     }
+    .parallax{
+      background-position: bottom 50px right 0px
+    }
    }
    @media (max-width: 480px){
     .home>h1{
@@ -129,6 +132,7 @@
       width: 200px;
       height: 180px;
     }
+  
    }
   
    

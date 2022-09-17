@@ -16,7 +16,6 @@
     "dotenv": "^16.0.2",
     "nodemon": "^2.0.19"
   },
-
   "scripts": {
     "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.js"

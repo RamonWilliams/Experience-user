@@ -197,9 +197,7 @@
 
     .frase-container h1 {
         display: none;
-
     }
-
     .formulario {
         height: 400px;
         width: 400px;
@@ -207,12 +205,8 @@
         margin-top: 0%;
         opacity: 70%;
     }
-
     .login-container {
         height: 73vh;
-
-    }
-
-
+    }  
 
 }
