@@ -1,4 +1,5 @@
 import React from 'react'
+import"./OtherInfo.css"
 
 const OtherInfo = ({ saveUser, user }) => {
 
@@ -7,16 +8,12 @@ const OtherInfo = ({ saveUser, user }) => {
   }
 
   return (
-    <div>
-
-
+    <div className='Other-Info' >
       <label htmlFor="avatar">Avatar:</label>
-     <input type="file" id="avatar" name="avatar" placeholder="Sube tu avatar" onChange={handleInput} value={user.avatar ? user.avatar : ''}  />
+      <input  className='file' type="file" id="avatar" name="avatar" placeholder="Sube tu avatar" onChange={handleInput} value={user.avatar ? user.avatar : ''}  />
       
-
-     <label htmlFor="description">Descripción :</label>
-     <input type="text" id="description" name="description"  placeholder="Descripción" onChange={handleInput} value={user.description ? user.description : ''}  /> 
-
+      <label htmlFor="description">Descripción :</label>
+      <input type="text" id="description" name="description"  placeholder="Descripción" onChange={handleInput} value={user.description ? user.description : ''}  /> 
     </div>
   )
 }

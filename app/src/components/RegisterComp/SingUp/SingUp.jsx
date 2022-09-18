@@ -8,7 +8,7 @@ const SingUp = ({ saveUser, user }) => {
   }
 
   return (
-    <div>
+    <div className='Sing-up'>
           <label htmlFor="fullname">Nombre completo:</label>
           <input type="text" id="fullname" name="fullname" placeholder="Nombre completo"  onChange={handleInput} value={user.fullname ? user.fullname : ''}  />
                

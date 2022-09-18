@@ -1,13 +1,12 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-   
+    box-sizing: border-box;   
 }
-
 img{
     width: 300px;
 }
 body{
     padding: 0;
 }
+
