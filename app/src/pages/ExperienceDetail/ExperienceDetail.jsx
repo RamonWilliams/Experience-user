@@ -2,7 +2,8 @@ import { API } from '../../services/API';
 import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import "./ExperienceDetail.css"
-import Pdi from '../Pdi/Pdi';
+import PdiCard from '../../components/PdiCard/PdiCard';
+
 
 const ExperienceDetail = () => {
 
@@ -13,17 +14,14 @@ const ExperienceDetail = () => {
 
     const getExperience = async() => {
         API.get(`/experience/${id}`).then(( res )=> {
-            setExperience( res.data.data)
-         
+            setExperience( res.data.data)         
           return  res.data.data
-
         }).then(( res ) => {
             const experiencePdis = res.pdis;
             if ( experiencePdis.length){
               if ( experiencePdis.length === 1 ) {
                 getExperiencePdi(experiencePdis[0]._id ) 
               }
-
              else {
                 getPdis(experiencePdis)
             }
@@ -33,6 +31,7 @@ const ExperienceDetail = () => {
         console.log(err)
     })
 };
+
 
  const getExperiencePdi = async ( idPdi) => {
 API.get(`/pdi/${idPdi}`).then(( res )=> {
@@ -44,37 +43,25 @@ setPdis(res.data.data)
     })
  }
  const filterPdis = (allPdis, experiencePdis) => 
-       {
-        
+       {        
         const filteredPdis = []
       allPdis.forEach(pdi => {
         experiencePdis.forEach(experiencePdi => {
           if ( experiencePdi._id === pdi._id ) {
             filteredPdis.push(pdi)
           }
-        })
-
-        
+        })        
       });
       setPdis(filteredPdis)
        }
 
     // const [pdis] = experience;
     // console.log(pdis)
-
-
   
     useEffect( () => {
         getExperience();
       
-    }, []);
-     
-
-    
-   
-    
-    
-   
+    }, []);   
    
   return (
 
@@ -82,6 +69,9 @@ setPdis(res.data.data)
                  
         <div className='carta'>  
           <div className='lado   frente'>
+          <div className='lado atras'> 
+            <img src={ experience.image } alt={ experience.name } />
+          </div>           
             <h2> Nombre: { experience.name } </h2>
             <h3> Localización: { experience.location} </h3>
             <p>Descripción: {experience.description}</p>
@@ -90,11 +80,9 @@ setPdis(res.data.data)
       
           </div> 
           <div className='pdi'>
-            {pdis.length ? pdis.map((pdi, index)=> <div key={index}> <h2>{pdi.name} </h2> </div> ): null}            
+            {pdis.length ? pdis.map((pdi)=> <PdiCard pdi={pdi} key={pdi._id}/> ): null}            
           </div> 
-          <div className='lado atras'> 
-            <img src={ experience.image } alt={ experience.name } />
-          </div>           
+         
         </div>
     </div>  
 

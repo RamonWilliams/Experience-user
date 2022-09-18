@@ -4,6 +4,7 @@ import { API } from "../../services/API";
 import ExperienceCard from '../../components/ExperienceCard/ExperienceCard';
 import "./Experience.css"
 
+
 const Experience = () => {
   const [allExperiences, setAllExperiences] = useState([]);
 
@@ -26,10 +27,11 @@ const Experience = () => {
       {allExperiences.length ? allExperiences.map((experience) => <ExperienceCard experience={experience} key={experience._id}
       />) : <p>Loading Experience... </p>}
          </div>
+        
     </section>
 
   )
-
+   
 
 
 

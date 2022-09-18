@@ -13,7 +13,7 @@ const OtherInfo = ({ saveUser, user }) => {
       <input  className='file' type="file" id="avatar" name="avatar"  onChange={handleInput} value={user.avatar ? user.avatar : ''}  />
       
       <label htmlFor="description">Descripción</label>
-      <input type="text" id="description" name="description"   onChange={handleInput} value={user.description ? user.description : ''}  /> 
+      <input type="text" id="description" name="description"  onChange={handleInput} value={user.description ? user.description : ''}  /> 
     </div>
   )
 }

@@ -7,7 +7,7 @@ const PdiCard = ({ pdi }) => {
 
   return (
     <Link to={`/pdi/${pdi._id}`}>
-        <figure className="Hotelcard">
+        <figure className="Pdicard">
             <img className="card_image" src={pdi.image} alt={pdi.name} />
             <h4 className="name">{pdi.name}</h4>  
             <p>{pdi.puntuation}</p>   
