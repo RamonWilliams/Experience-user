@@ -26,8 +26,7 @@ const Experience = () => {
       <div className='div-card'>  
       {allExperiences.length ? allExperiences.map((experience) => <ExperienceCard experience={experience} key={experience._id}
       />) : <p>Loading Experience... </p>}
-         </div>
-        
+         </div>        
     </section>
 
   )

@@ -70,39 +70,41 @@ setPdis([res.data.data])
    
   return (
 
-      <div className='contenedor'>    
-       <div className='contenedorExp'>                              
-          <div className='cardDetail'>              
-            <div className='titleDet'>
-                <h2> Nombre: { experience.name } </h2>
-                <h3> Localización: { experience.location} </h3>
-            </div>
-            <div className='conteinerInfo'>
-                <div>
-                  <div className='imageDetail'> 
-                    <img src={ experience.image } alt={ experience.name } />
-                  </div>
-                  <div className='description'>
-                    <p>Descripción: {experience.description}</p>
-                  </div> 
-               </div>
-           </div>
-              <div className='Price'>
-                <p> Precio: {experience.price}</p>
-                <p> Puntos de interés: </p>              
-              </div>
-              
+    <>
+    <figure className='detail'>
+        <div className='conteinerInfo'>
+          <div className='imageDetail'> 
+            <img src={ experience.image } alt={ experience.name } />
+          </div>
+          <div className='description'>
+            <h2>  { experience.name } </h2>
+            <h3>  { experience.location} </h3>
+            <p> {experience.description}</p>
+           <div className='price'>
+            <p>  {experience.price} € </p>
+            </div> 
           </div> 
-              <div className='pdi'>
-               {pdis.length ? pdis.map((pdi) => <PdiCard pdi={pdi} key={pdi._id} /> ): null}              
-              </div>      
-     
-        </div>  
-      </div>
+         </div> 
+      </figure>
+             
+    <div className='puntos'>
+        <h2> Puntos de interés </h2>              
+    
+    </div>
+      <div className='pdi'>
+       {pdis.length ? pdis.map((pdi) => <PdiCard pdi={pdi} key={pdi._id} /> ): null}              
+       
+      </div>      
+
+ 
+      </>
+
+  );
+}
 
 
  
-  );
-}
+  
+
 
 export default ExperienceDetail

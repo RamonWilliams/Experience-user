@@ -12,7 +12,7 @@ const ExperienceCard = ({ experience }) => {
             <img src={experience.image} alt={experience.name} />                                    
         </div>            
         <div className="text-container">
-          <h3>{experience.name}</h3>         
+          <h3>{experience.name}</h3>          
         </div>          
     </figure>
 </Link>
