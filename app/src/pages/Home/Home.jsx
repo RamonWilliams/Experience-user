@@ -15,13 +15,13 @@ const Home = () => {
       <div className='gallery' >
        
           <div className='photo-2'>           
-            <img src="../../../public/galería/galería10.jpg" alt="Photo10" />
+            <img src="https://cdn.discordapp.com/attachments/997843641752096798/1020614472357912656/unknown.png" />
           </div>
           <div className='photo'>
-            <img src="../../../public/galería/galería11.jpg" alt="Photo11" />
+            <img src="https://cdn.discordapp.com/attachments/997843641752096798/1020333301627633774/unknown.png" alt="Photo11" />
           </div>
           <div className='photo'>
-            <img src="../../../public/galería/galería12.jpg" alt="Photo12" />
+            <img src="https://cdn.discordapp.com/attachments/997843641752096798/1020613682578870272/unknown.png" />
           </div>
        
           <div className='photo'>
@@ -31,7 +31,7 @@ const Home = () => {
             <img src="../../../public/galería/galería5.jpg" alt="Photo5" />
           </div>
           <div className='photo-2'>
-          <img src="../../../public/galería/galería1.jpg" alt="Photo1" />
+          <img src="https://cdn.discordapp.com/attachments/997843641752096798/1020615537459478598/unknown.png" />
           </div>    
       </div>
     </section>

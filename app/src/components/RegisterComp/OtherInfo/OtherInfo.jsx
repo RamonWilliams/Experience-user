@@ -9,11 +9,11 @@ const OtherInfo = ({ saveUser, user }) => {
 
   return (
     <div className='Other-Info' >
-      <label htmlFor="avatar">Avatar:</label>
-      <input  className='file' type="file" id="avatar" name="avatar" placeholder="Sube tu avatar" onChange={handleInput} value={user.avatar ? user.avatar : ''}  />
+      <label htmlFor="avatar">Avatar</label>
+      <input  className='file' type="file" id="avatar" name="avatar"  onChange={handleInput} value={user.avatar ? user.avatar : ''}  />
       
-      <label htmlFor="description">Descripción :</label>
-      <input type="text" id="description" name="description"  placeholder="Descripción" onChange={handleInput} value={user.description ? user.description : ''}  /> 
+      <label htmlFor="description">Descripción</label>
+      <input type="text" id="description" name="description"   onChange={handleInput} value={user.description ? user.description : ''}  /> 
     </div>
   )
 }

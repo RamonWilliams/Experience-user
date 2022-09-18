@@ -78,37 +78,24 @@ setPdis(res.data.data)
    
   return (
 
-   <div className='contenedor'>
-
-       
-        
+   <div className='contenedor'>          
                  
         <div className='carta'>  
-        <div className='lado   frente'>
-        <h2> Nombre: { experience.name } </h2>
-        <h3> Localización: { experience.location} </h3>
-        <p>Descripción: {experience.description}</p>
-        <p> Precio: {experience.price}</p>
-        <p> Puntos de interés: </p> 
-       
-       
-            
-     
-
+          <div className='lado   frente'>
+            <h2> Nombre: { experience.name } </h2>
+            <h3> Localización: { experience.location} </h3>
+            <p>Descripción: {experience.description}</p>
+            <p> Precio: {experience.price}</p>
+            <p> Puntos de interés: </p>        
       
-        </div> 
-        <div className='pdi'>
-         {pdis.length ? pdis.map((pdi, index)=> <div key={index}> <h2>{pdi.name} </h2> </div> ): null}
-         
-        </div> 
-        <div className='lado atras'> 
-        <img src={ experience.image } alt={ experience.name } />
+          </div> 
+          <div className='pdi'>
+            {pdis.length ? pdis.map((pdi, index)=> <div key={index}> <h2>{pdi.name} </h2> </div> ): null}            
+          </div> 
+          <div className='lado atras'> 
+            <img src={ experience.image } alt={ experience.name } />
+          </div>           
         </div>
-        
-
-        </div>
-
-
     </div>  
 
 

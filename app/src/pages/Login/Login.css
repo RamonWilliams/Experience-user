@@ -6,7 +6,7 @@
     height: 80vh;
     background-size: cover;
     background-repeat: no-repeat;   
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   
 }
 .frase-container {
@@ -61,16 +61,17 @@
 .formulario label {
     padding-bottom: 10px;
     font-size: 25px;
-    color: #fff;  
+    color: #fff; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
 }
 /*------------------------------------------*/
 .button-login {      
     border: none;
     width: 10rem;
     padding: 0.5rem 2rem;
-    gap: 8rem;
-    background-color: rgb(185, 32, 32);
     border-radius: 0.2rem;
+    gap: 8rem;
+    background-color: rgb(185, 32, 32);   
     font-weight: bolder;
     font-size: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -79,10 +80,9 @@
     transition: all 0.3s ease-in-out;
 }
 .button-login:hover {    
-    transition: all 0.3s ease-in-out;
-    transform: scale(1.1);
+   
     background-color: rgb(255, 247, 247);
-    color: red;
+    color: rgb(185, 32, 32)
     
 }
 /*------------------------------------------------------------------------*/

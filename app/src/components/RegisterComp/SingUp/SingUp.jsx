@@ -9,11 +9,11 @@ const SingUp = ({ saveUser, user }) => {
 
   return (
     <div className='Sing-up'>
-          <label htmlFor="fullname">Nombre completo:</label>
-          <input type="text" id="fullname" name="fullname" placeholder="Nombre completo"  onChange={handleInput} value={user.fullname ? user.fullname : ''}  />
+          <label htmlFor="fullname">Nombre completo</label>
+          <input type="text" id="fullname" name="fullname"  onChange={handleInput} value={user.fullname ? user.fullname : ''}  />
                
-          <label htmlFor="username">Nombre de usuario:</label>
-          <input type="text" id="username" name="username"  placeholder="Nombre de usuario" onChange={handleInput} value={user.username ? user.username : ''}  />
+          <label htmlFor="username">Usuario</label>
+          <input type="text" id="username" name="username"  onChange={handleInput} value={user.username ? user.username : ''}  />
     </div>
   )
 }

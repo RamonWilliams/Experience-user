@@ -45,10 +45,10 @@ console.log(user)
       {step === 3 && (<OtherInfo saveUser={saveUser} user={user}></OtherInfo>)}
 
       <div className='buttons'>
-      {step === 1 && (<button type="button" onClick={nextStep}>Next</button>)}
-      {step !== 1 && (<button type="button" onClick={prevStep}>Back</button>)}
-      {step === 2 && (<button type="button" onClick={nextStep}>Next</button>)}     
-      {step === 3 && ( <Link to="/login"><button type="button" onClick={sendInfo}>Send</button></Link>)}
+      {step === 1 && (<button type="button" onClick={nextStep}>Siguiente</button>)}
+      {step !== 1 && (<button type="button" onClick={prevStep}>Volver</button>)}
+      {step === 2 && (<button type="button" onClick={nextStep}>Siguiente</button>)}     
+      {step === 3 && ( <Link to="/login"><button type="button" onClick={sendInfo}>Enviar</button></Link>)}
       </div>
       </section>
     </>

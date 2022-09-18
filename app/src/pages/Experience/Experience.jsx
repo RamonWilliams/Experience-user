@@ -21,14 +21,11 @@ const Experience = () => {
 
 
   return (
-    <section>
-      <input type="text" className='input-pdi'/> 
+    <section className='general-experience'>         
       <div className='div-card'>  
       {allExperiences.length ? allExperiences.map((experience) => <ExperienceCard experience={experience} key={experience._id}
       />) : <p>Loading Experience... </p>}
          </div>
-
-
     </section>
 
   )

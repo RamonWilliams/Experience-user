@@ -4,4 +4,8 @@
     justify-items: center;
     justify-content: space-around;
     flex-direction: row;
+    
+}
+.general-experience{
+    margin-bottom: 3rem;
 }

@@ -10,11 +10,11 @@ const PersonalInfo = ({ saveUser, user }) => {
   }
   return (
     <div className='PersonalInfo'>
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password"  placeholder="escribe tu contraseña" onChange={handleInput} value={user.password ? user.password : ''} />
+          <label htmlFor="password">Contraseña</label>
+          <input type="password" id="password" name="password"  onChange={handleInput} value={user.password ? user.password : ''} />
                 
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email"  placeholder="escribe tu email" onChange={handleInput} value={user.email ? user.email : ''}  />           
+          <label htmlFor="email">Correo</label>
+          <input type="email" id="email" name="email"  onChange={handleInput} value={user.email ? user.email : ''}  />           
     </div>
   )
 }

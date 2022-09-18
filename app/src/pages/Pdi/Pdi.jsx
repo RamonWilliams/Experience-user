@@ -22,22 +22,13 @@ const Pdi = () => {
 
 
   return (
-    <section className='pdi'>
-     
+    <section className='pdi'>     
       <input type="text" className='input-pdi'/>
-      <Link to="/pdi/create"> <p> Quieres crear tu Punto de interés</p>    </Link>
-  
+      <Link to="/pdi/create"> <p> Quieres crear tu Punto de interés</p> </Link>  
       {allPdis.length ? allPdis.map((pdi) => <PdiCard pdi={pdi} key={pdi._id}
       />) : <p>Loading Pdi... </p>}
-
     </section>
-
   )
-
-
-
-
-
 }
 
 export default Pdi
