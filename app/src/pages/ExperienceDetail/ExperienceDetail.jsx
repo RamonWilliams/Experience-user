@@ -28,6 +28,10 @@ const ExperienceDetail = () => {
             }
            
     }).catch(( err ) => {
+            setExperience( res.data.data)         
+            setPdis(res.data.data.pdis)         
+
+        }).catch(( err ) => {
         console.log(err)
     })
 };
@@ -35,7 +39,7 @@ const ExperienceDetail = () => {
 
  const getExperiencePdi = async ( idPdi) => {
 API.get(`/pdi/${idPdi}`).then(( res )=> {
-setPdis(res.data.data)
+setPdis([res.data.data])
  })}
  const getPdis = async (experiencePdis) => {
     API.get("/pdi").then(( res )=> {
@@ -54,6 +58,7 @@ setPdis(res.data.data)
       });
       setPdis(filteredPdis)
        }
+ 
 
     // const [pdis] = experience;
     // console.log(pdis)
@@ -65,30 +70,39 @@ setPdis(res.data.data)
    
   return (
 
-   <div className='contenedor'>          
-                 
-        <div className='carta'>  
-          <div className='lado   frente'>
-          <div className='lado atras'> 
-            <img src={ experience.image } alt={ experience.name } />
-          </div>           
-            <h2> Nombre: { experience.name } </h2>
-            <h3> Localización: { experience.location} </h3>
-            <p>Descripción: {experience.description}</p>
-            <p> Precio: {experience.price}</p>
-            <p> Puntos de interés: </p>        
-      
+      <div className='contenedor'>    
+       <div className='contenedorExp'>                              
+          <div className='cardDetail'>              
+            <div className='titleDet'>
+                <h2> Nombre: { experience.name } </h2>
+                <h3> Localización: { experience.location} </h3>
+            </div>
+            <div className='conteinerInfo'>
+                <div>
+                  <div className='imageDetail'> 
+                    <img src={ experience.image } alt={ experience.name } />
+                  </div>
+                  <div className='description'>
+                    <p>Descripción: {experience.description}</p>
+                  </div> 
+               </div>
+           </div>
+              <div className='Price'>
+                <p> Precio: {experience.price}</p>
+                <p> Puntos de interés: </p>              
+              </div>
+              
           </div> 
-          <div className='pdi'>
-            {pdis.length ? pdis.map((pdi)=> <PdiCard pdi={pdi} key={pdi._id}/> ): null}            
-          </div> 
-         
-        </div>
-    </div>  
+              <div className='pdi'>
+               {pdis.length ? pdis.map((pdi) => <PdiCard pdi={pdi} key={pdi._id} /> ): null}              
+              </div>      
+     
+        </div>  
+      </div>
 
 
  
-  )
+  );
 }
 
 export default ExperienceDetail
