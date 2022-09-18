@@ -31,13 +31,12 @@ return (
   <ul className='header'>    
     
     <li> <Link to="/"> <button>Home</button></Link> </li> 
-
-     <><li>
+    {user?(<><li>
         <Link to="/experience"> 
             <button> Experiencias </button> 
         </Link>
-      </li> </>
-
+      </li> </>):null}
+      
       {user?( <><li>
       <Link to="/profile"> <button>Perfil</button> </Link>
       </li></>):null }
