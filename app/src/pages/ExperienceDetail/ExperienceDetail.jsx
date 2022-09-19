@@ -1,17 +1,19 @@
 import { API } from '../../services/API';
 import { useParams } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { JwtContext } from '../../context/jwtContext';
 import "./ExperienceDetail.css"
 import PdiCard from '../../components/PdiCard/PdiCard';
-import Loader from '../../components/Loader/Loader';
+
 
 
 const ExperienceDetail = () => {
-
+    
+    const {user} = useContext(JwtContext);
     const { id } = useParams();
     const [ experience, setExperience ] = useState({});
     const [ pdis, setPdis ] = useState([]);
-   
+    
 
     const getExperience = async() => {
         API.get(`/experience/${id}`).then(( res )=> {
@@ -59,18 +61,24 @@ setPdis([res.data.data])
       });
       setPdis(filteredPdis)
        }
+
+        const addFavorite = async () =>{
+
+           const newExperience = {
+            favoriteExperience: [...user.favoriteExperience, experience._id]  
+          };
+          API.patch(`/user/${user._id}`, newExperience); //Estamos modificando el usuario que hay en la página
+        }
  
 
     // const [pdis] = experience;
     // console.log(pdis)
   
     useEffect( () => {
-        getExperience();
-      
+        getExperience();      
     }, []);   
    
-    return (                           
-                   
+    return (                                 
       <>
          <figure className='detail'>
              <div className='conteinerInfo'>
@@ -82,7 +90,8 @@ setPdis([res.data.data])
                  <h3>  { experience.location} </h3>
                  <p> {experience.description}</p>
                 <div className='price'>
-                 <p>  {experience.price} € </p>
+                 <p>  {experience.price}€</p>
+                 <button onClick={() => addFavorite()}>Añadir a favorito</button>
                  </div> 
                </div> 
               </div> 
