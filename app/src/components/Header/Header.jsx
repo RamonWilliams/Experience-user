@@ -27,6 +27,11 @@ return (
           <button> Experiencias </button> 
         </Link>
       </li> </>):null}
+      {user?(<><li>
+      <Link to="/pdi"> 
+          <button> Pdis </button> 
+        </Link>
+      </li> </>):null}
       
       {user?( <><li>
       <Link to="/profile"> <button>Perfil</button> </Link>

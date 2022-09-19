@@ -97,6 +97,22 @@ const update = async (req, res, next) => {
     return next("Error to modify user", error);
   }
 };
+ const remove = async (req, res, next) => {
+   try {
+     const { id } = req.params;
+     const userDB = await User.findByIdAndDelete(id);
+     if (!userDB) {
+       return next("User not found");
+     }
+     if (userDB) {
+       deleteFile(userDB.avatar);
+     }
+
+     return res.status(200).json(userDB);
+   } catch (error) {
+     return next("This user can't delete ", error);
+   }
+ };
 
 
 module.exports = {
@@ -105,5 +121,6 @@ module.exports = {
   getByUserName,
   register,
   login,
-  update
+  update,
+  remove
 };

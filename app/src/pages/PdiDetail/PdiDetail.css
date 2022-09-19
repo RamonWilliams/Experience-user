@@ -14,7 +14,7 @@
     width: 1360px;
     height:600px; 
     margin-top: 70px;
-    margin-bottom: 5%;  
+      
 }
 .imageDetailP{    
     height: 400px;
@@ -69,6 +69,17 @@
     font-weight: bolder;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(185, 32, 32);
+}
+.mapa{   
+    display: flex;
+   
+    border-radius: 8px;    
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    margin-top: 70px;
+    margin-bottom: 5%;  
 }
 @media (max-width: 992px){
     .conteinerInfoP{      

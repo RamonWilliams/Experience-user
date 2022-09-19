@@ -10,7 +10,8 @@ const {
   getByUserName,
   register,
   login,
-  update
+  update,
+  remove
 
 } = require("./user.controller");
 
@@ -20,5 +21,6 @@ UserRoutes.get("/", getAll);
 UserRoutes.get("/:id", getById);
 UserRoutes.get("/user/:username", [authorize], getByUserName);
 UserRoutes.patch('/:id', [authorize], upload.single("avatar"), update);
+UserRoutes.delete('/:id', [authorize], remove);
 
 module.exports = UserRoutes;

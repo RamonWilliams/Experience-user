@@ -2,23 +2,29 @@ import { API } from '../../services/API';
 import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import "./PdiDetail.css"
+import Geolocation from '../../components/MarkersMap/Geolocation';
+
 
 const PdiDetail = () => {
     const { id } = useParams();
     const [ pdi, setPdi ] = useState([]);
+  
 
     const getPdi = async() => {
         API.get(`/pdi/${id}`).then(( res )=> {
             setPdi( res.data.data)
-            console.log(res.data.data)
+          
         })
     }
+  
+    
     useEffect( () => {
         getPdi();
-    }, [])
-
+        
+    }, [])   
+           
     return (
-
+       <>
         <figure className='detailP'>
           <div className='conteinerInfoP'>
                 <div className='imageDetailP'>  
@@ -34,7 +40,14 @@ const PdiDetail = () => {
                   </div>      
                 </div> 
             </div>  
-        </figure>
+        </figure>        
+        <div className='mapa'>
+         {pdi.name && pdi.lat && pdi.lng?( <Geolocation geolocationValues={pdi}/>):(<p>No hay</p>)}
+         
+         
+        </div>
+        </>
+
       )
 }
 
