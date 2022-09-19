@@ -4,6 +4,7 @@ import { API } from "../../services/API";
 import PdiCard from '../../components/PdiCard/PdiCard';
 import { Link } from 'react-router-dom';
 import "./Pdi.css"
+import Loader from '../../components/Loader/Loader';
 
 const Pdi = () => {
   const [allPdis, setAllPdis] = useState([]);
@@ -26,7 +27,7 @@ const Pdi = () => {
       <input type="text" className='input-pdi'/>
       <Link to="/pdi/create"> <p> Quieres crear tu Punto de interés</p> </Link>  
       {allPdis.length ? allPdis.map((pdi) => <PdiCard pdi={pdi} key={pdi._id}
-      />) : <p>Loading Pdi... </p>}
+      />) :<p>Loading...</p>}
     </section>
   )
 }

@@ -9,7 +9,6 @@ import Login from "./pages/Login/Login"
 // import Profile from "./pages/Profile/Profile"
 import Experience from "./pages/Experience/Experience"
 import ExperienceDetail from "./pages/ExperienceDetail/ExperienceDetail"
-
 import PdiDetail from "./pages/PdiDetail/PdiDetail"
 import Profile from "./pages/Profile/Profile"
 import './App.css'
@@ -24,7 +23,7 @@ const App = () => {
 
   return (
     <JwtContextProvider >
-      <div className="App">
+      <div className="App">      
         <Router>
           <Header />
           <Routes>            
@@ -35,7 +34,7 @@ const App = () => {
             <Route path="/experience" element={<RequireAuth><Experience /></RequireAuth>} />
             <Route path="/experience/:id" element={<RequireAuth><ExperienceDetail /></RequireAuth>} /> 
             <Route path="/pdi" element={<RequireAuth><Pdi /></RequireAuth>} />          
-            <Route path="/pdi/:id" element={<RequireAuth><PdiDetail /></RequireAuth>} />         
+            <Route path="/pdi/:id" element={<RequireAuth><PdiDetail /></RequireAuth>} />             
           </Routes>
         </Router>
         <Footer />

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import "./ExperienceDetail.css"
 import PdiCard from '../../components/PdiCard/PdiCard';
+import Loader from '../../components/Loader/Loader';
 
 
 const ExperienceDetail = () => {
@@ -68,43 +69,33 @@ setPdis([res.data.data])
       
     }, []);   
    
-  return (
-
-    <>
-    <figure className='detail'>
-        <div className='conteinerInfo'>
-          <div className='imageDetail'> 
-            <img src={ experience.image } alt={ experience.name } />
-          </div>
-          <div className='description'>
-            <h2>  { experience.name } </h2>
-            <h3>  { experience.location} </h3>
-            <p> {experience.description}</p>
-           <div className='price'>
-            <p>  {experience.price} € </p>
-            </div> 
-          </div> 
-         </div> 
-      </figure>
-             
-    <div className='puntos'>
-        <h2> Puntos de interés </h2>              
-    
-    </div>
-      <div className='pdi'>
-       {pdis.length ? pdis.map((pdi) => <PdiCard pdi={pdi} key={pdi._id} /> ): null}              
-       
-      </div>      
-
- 
-      </>
-
-  );
+    return (                           
+                   
+      <>
+         <figure className='detail'>
+             <div className='conteinerInfo'>
+               <div className='imageDetail'> 
+                 <img src={ experience.image } alt={ experience.name } />
+               </div>
+               <div className='description'>
+                 <h2>  { experience.name } </h2>
+                 <h3>  { experience.location} </h3>
+                 <p> {experience.description}</p>
+                <div className='price'>
+                 <p>  {experience.price} € </p>
+                 </div> 
+               </div> 
+              </div> 
+           </figure>
+                  
+         <div className='puntos'>
+             <h2> Puntos de interés </h2>         
+         </div>
+           <div className='pdi'>
+            {pdis.length ? pdis.map((pdi) => <PdiCard pdi={pdi} key={pdi._id} /> ):<p></p> }            
+           </div>        
+           </>
+);
 }
-
-
- 
-  
-
 
 export default ExperienceDetail

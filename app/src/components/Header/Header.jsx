@@ -5,16 +5,10 @@ import { useContext } from "react";
 import { JwtContext } from "../../context/jwtContext";
 
 
-
-
-
-
 const Header = () => {
 
   const { user, logout } = useContext(JwtContext);
-  let navigate = useNavigate();
-
-  
+  let navigate = useNavigate();  
 
 return (
 <header>
@@ -23,17 +17,14 @@ return (
      <img src="../../../public/images/Logo.jpg" alt="Logo" />
     </div>
 </div>
-
-    {/* { <Home/>?(<input type="text" className='input-header'/> === false ) : (null)} */}
-
-    
+    {/* { <Home/>?(<input type="text" className='input-header'/> === false ) : (null)} */}   
    
-  <ul className='header'>    
-    
-    <li> <Link to="/"> <button>Home</button></Link> </li> 
-    {user?(<><li>
-        <Link to="/experience"> 
-            <button> Experiencias </button> 
+  <ul className='header'>        
+    <li> 
+      <Link to="/"> <button>Home</button></Link> </li> 
+       {user?(<><li>
+      <Link to="/experience"> 
+          <button> Experiencias </button> 
         </Link>
       </li> </>):null}
       
@@ -41,24 +32,18 @@ return (
       <Link to="/profile"> <button>Perfil</button> </Link>
       </li></>):null }
 
-      {/* <li>
-        <Link to="/pdi"> 
-            <button> Puntos de Interés </button> 
-        </Link>
-      </li>   
-       */}
       {user ?(<>
       {user.avatar !== "undefined" ? ( <img src={user.avatar} alt="Avatar"/> 
       ) : null}        
           <button onClick={() => logout() & navigate("/")} className='logout'>Logout</button>         
       </>)
-    : (<>   
+      :(<>   
         <li>
       <Link to="/login"> <button>Login</button></Link>
       </li>       
 
       <li>
-      <Link to="/register" ><button>Regístrate</button></Link>
+      <Link to="/register"><button>Regístrate</button></Link>
       </li>
       </> 
      

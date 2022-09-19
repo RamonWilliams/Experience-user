@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { API } from "../../services/API";
 import ExperienceCard from '../../components/ExperienceCard/ExperienceCard';
 import "./Experience.css"
+import Loader from '../../components/Loader/Loader';
 
 
 const Experience = () => {
@@ -25,7 +26,7 @@ const Experience = () => {
     <section className='general-experience'>         
       <div className='div-card'>  
       {allExperiences.length ? allExperiences.map((experience) => <ExperienceCard experience={experience} key={experience._id}
-      />) : <p>Loading Experience... </p>}
+      />) : <p>Loading...</p>}
          </div>        
     </section>
 

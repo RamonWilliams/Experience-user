@@ -4,9 +4,7 @@ import React, { useEffect, useState } from 'react';
 import "./PdiDetail.css"
 
 const PdiDetail = () => {
-
     const { id } = useParams();
-
     const [ pdi, setPdi ] = useState([]);
 
     const getPdi = async() => {
@@ -15,32 +13,29 @@ const PdiDetail = () => {
             console.log(res.data.data)
         })
     }
-
     useEffect( () => {
         getPdi();
     }, [])
 
-  return (
-    <div className='contenedor'>
+    return (
 
-        <div className='carta'>  
-        <div className='lado   frente'>
-        <h2> Nombre: { pdi.name } </h2>
-        <h2> Tipo: { pdi.type } </h2>
-        <p> Descripción: {pdi.description}</p>
-        <h3> Direccón: { pdi.address} </h3>      
-        <p> Precio: {pdi.price}</p>      
-      
-        </div> 
-
-        <div className='lado atras'> 
-        <img src={ pdi.image } alt={ pdi.name } />
-        </div>
-        
-
-        </div>
-    </div>
-  )
+        <figure className='detailP'>
+          <div className='conteinerInfoP'>
+                <div className='imageDetailP'>  
+                 <img src={ pdi.image } alt={ pdi.name } />
+                </div>  
+                <div className='descriptionP'>
+                    <h2>  { pdi.name } </h2>
+                    <h3>  { pdi.type } </h3>
+                    <p>  {pdi.description}</p>
+                    <p>  { pdi.address} </p>         
+                  <div className='priceP'> 
+                    <p>{pdi.price} €</p>     
+                  </div>      
+                </div> 
+            </div>  
+        </figure>
+      )
 }
 
 export default PdiDetail
