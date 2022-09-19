@@ -63,11 +63,30 @@ setPdis([res.data.data])
        }
 
         const addFavorite = async () =>{
-
+console.log(user)
            const newExperience = {
             favoriteExperience: [...user.favoriteExperience, experience._id]  
           };
-          API.patch(`/user/${user._id}`, newExperience); //Estamos modificando el usuario que hay en la página
+         if ( user.favoriteExperience.indexOf(experience._id) === -1 ) {
+          API.patch(`/user/${user._id}`, newExperience);
+         }
+          
+        }
+
+        const removeFavorite = async () =>{
+          const tempFavoriteExperience = [...user.favoriteExperience]
+          const elementToDeletePos = tempFavoriteExperience.indexOf(
+            experience._id
+        );
+        const newFavoriteExperience = tempFavoriteExperience.splice(
+          elementToDeletePos,
+          1
+      );
+      const newExperience = {
+        favoriteExperience: newFavoriteExperience,
+    };
+
+    API.patch(`/user/${user._id}`, newExperience);
         }
  
 
@@ -92,6 +111,7 @@ setPdis([res.data.data])
                 <div className='price'>
                  <p>  {experience.price}€</p>
                  <button onClick={() => addFavorite()}>Añadir a favorito</button>
+                 <button onClick={() => removeFavorite()}>-Borrar favorito</button>
                  </div> 
                </div> 
               </div> 
