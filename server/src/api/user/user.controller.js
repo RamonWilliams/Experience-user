@@ -2,6 +2,7 @@ const User = require("./user.model");
 const bcrypt = require("bcrypt");
 const { createToken } = require("../../helpers/token-action");
 const { setError } = require("../../helpers/errors");
+const { deleteFile } = require("../../middlewares/delete-file");
 
 const getAll = async (req, res, next) => {
   try {
@@ -73,6 +74,30 @@ const login = async (req, res, next) => {
     return next(setError(500, error.message || "Unexpected error login"));
   }
 };
+const update = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const userDB = await User.findById(id);
+    if (!userDB) {
+      return next("User not found");
+    }
+  if (userDB && req.file) {
+    deleteFile(userDB.avatar);
+  }
+    const patchUserDB = new User(req.body);
+
+    patchUserDB._id = id;
+
+    if (req.file) {
+      patchUserDB.image = req.file.path;
+    }
+    const UserDB = await User.findByIdAndUpdate(id, patchUserDB);
+    return res.status(200).json({ new: patchUserDB, old: UserDB });
+  } catch (error) {
+    return next("Error to modify user", error);
+  }
+};
+
 
 module.exports = {
   getAll,
@@ -80,4 +105,5 @@ module.exports = {
   getByUserName,
   register,
   login,
+  update
 };

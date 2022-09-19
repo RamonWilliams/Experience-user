@@ -10,6 +10,8 @@ const schema = new Schema(
     image: { type: String, required: true },
     address: { type: String, required: true },
     price: { type: Number },
+    lat:{Type:String},
+    lng:{Type:String}
   },
   {
     timestamps: true,

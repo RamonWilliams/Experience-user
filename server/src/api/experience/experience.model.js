@@ -10,6 +10,8 @@ const schema = new Schema(
     price: { type: Number, required: true },
     pdis: [{ type: mongoose.Schema.Types.ObjectId, ref: "pdi" }],
     userFavorite: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: "user" }],
+    latitude:{Type:Number},
+    longitude:{Type:Number}
   },
   {
     timestamps: true,
