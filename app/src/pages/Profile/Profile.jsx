@@ -64,82 +64,86 @@ const Profile = () => {
 
 
     return (
-        <section className="registro">
-            <form onSubmit={handleSubmit(formSubmit)} className="registrarse">
-                <label htmlFor="fullname">Nombre completo:</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Nombre completo"  {...register("fullname", {
-                    required: {
-                        value: true,
-                        message: "Necesitas este campo",
-                    }
-                })} />
-                {errors.fullname && <span>{errors.fullname.message}</span>}
-
-                <label htmlFor="username">Nombre de usuario:</label>
-                <input type="text" id="username" name="username" placeholder="Nombre de usuario" {...register("username", {
-                    required: {
-                        value: true,
-                        message: "Necesitas este campo",}
-                })} />
-                {errors.username && <span>{errors.username.message}</span>}
-
-                <label htmlFor="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="escribe tu contraseña" {...register("password", {
-                    required: {
-                        value: true,
-                        message: "La contraseña debe de tener al menos 6 caracteres",
-
-                    }
-                })} />
-                {errors.password && <span>{errors.password.message}</span>}
+        <section className="profile-container">
 
 
+         <div className="profile">
+                <form onSubmit={handleSubmit(formSubmit)} className="formularioProf">
+                        <label htmlFor="fullname">Nombre completo</label>
+                        <input type="text" id="fullname" name="fullname"  {...register("fullname", {
+                            required: {
+                                value: true,
+                                message: "Necesitas este campo",
+                            }
+                        })} />
+                        {errors.fullname && <span>{errors.fullname.message}</span>}
 
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="escribe tu email" {...register("email", {
-                    required: {
-                        value: true,
-                        message: "El email debe ser válido",
+                        <label htmlFor="username">Nombre de usuario</label>
+                        <input type="text" id="username" name="username"  {...register("username", {
+                            required: {
+                                value: true,
+                                message: "Necesitas este campo",}
+                        })} />
+                        {errors.username && <span>{errors.username.message}</span>}
 
-                    }
-                })} />
-                {errors.email && <span>{errors.email.message}</span>}
+                        <label htmlFor="password">Password</label>
+                        <input type="password" id="password" name="password"  {...register("password", {
+                            required: {
+                                value: true,
+                                message: "La contraseña debe de tener al menos 6 caracteres",
+
+                            }
+                        })} />
+                        {errors.password && <span>{errors.password.message}</span>}
 
 
 
-                <label htmlFor="avatar">Avatar:</label>
-                <input type="file" id="avatar" name="avatar" placeholder="Sube tu avatar" {...register("avatar", {
-                    required: {
-                        value: true,
-                        message: "Necesitas este campo",
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" name="email"  {...register("email", {
+                            required: {
+                                value: true,
+                                message: "El email debe ser válido",
 
-                    }
-                })} />
-                {errors.avatar && <span>{errors.avatar.message}</span>}                
+                            }
+                        })} />
+                        {errors.email && <span>{errors.email.message}</span>}
 
 
-                <label htmlFor="description">Descripción :</label>
-                <input type="text" id="description" name="description" placeholder="Descripción "{...register("description", {
-                    required: {
-                        value: true,
-                        message: "Necesitas este campo",
 
-                    }
-                })} /> {errors.description && <span>{errors.description.message}</span>}
+                        <label htmlFor="avatar">Avatar</label>
+                        <input type="file" id="avatar" name="avatar"  {...register("avatar", {
+                            required: {
+                                value: true,
+                                message: "Necesitas este campo",
 
-                <label htmlFor="favoriteExperiencie">Experiencias Favoritas :</label>
-                <input type="text" id="favoriteExperience" name="favoriteExperience" placeholder="favoriteExperience "{...register("favoriteExperience", {
-                    required: {
-                        value: true,
-                        message: "Necesitas este campo",
+                            }
+                        })} />
+                        {errors.avatar && <span>{errors.avatar.message}</span>}                
 
-                    }
-                })} /> {errors.favoriteExperience && <span>{errors.favoriteExperience.message}</span>}     
 
-                <button type="submit" >Editar</button>
-                <button type="button" onClick={() => deleteUser(user)}>Borrar</button>
+                        <label htmlFor="description">Descripción </label>
+                        <input type="text" id="description" name="description" {...register("description", {
+                            required: {
+                                value: true,
+                                message: "Necesitas este campo",
 
+                            }
+                        })} /> {errors.description && <span>{errors.description.message}</span>}
+
+                        <label htmlFor="favoriteExperiencie">Experiencias Favoritas </label>
+                        <input type="text" id="favoriteExperience" name="favoriteExperience"{...register("favoriteExperience", {
+                            required: {
+                                value: true,
+                                message: "Necesitas este campo",
+
+                            }
+                        })} /> {errors.favoriteExperience && <span>{errors.favoriteExperience.message}</span>}     
+                    <div className='buttonDiv'>
+                        <button type="submit" className="button-profile">Editar</button>
+                        <button type="button" className="button-profile" onClick={() => deleteUser(user)}>Borrar</button>
+                    </div>
             </form>
+          </div> 
         </section>
     )
 

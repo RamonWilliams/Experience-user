@@ -21,7 +21,6 @@ const Login = () => {
             setUser(res.data.userInDb);
             if (res.data.token) {
                 navigate("/experience");
-
             }
         });
     };

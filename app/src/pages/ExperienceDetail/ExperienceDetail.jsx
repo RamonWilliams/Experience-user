@@ -4,7 +4,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { JwtContext } from '../../context/jwtContext';
 import "./ExperienceDetail.css"
 import PdiCard from '../../components/PdiCard/PdiCard';
-
+import {  Link} from 'react-router-dom'
 
 
 const ExperienceDetail = () => {
@@ -16,6 +16,7 @@ const ExperienceDetail = () => {
   const [pdis, setPdis] = useState([]);
 
 
+
   const getUser = async () => {
     API.get(`/user/${user._id}`).then((res) => {
       console.log(res)
@@ -25,13 +26,21 @@ const ExperienceDetail = () => {
        } else {setShowFav(true)};
     })
   }
+  const getFavorites = async () =>{
+    API.get(`/user/username/${user.username}`).then((res)=>{
+      console.log(res.data.data);
+      const user = res.data.data
+      localStorage.setItem("user", JSON.stringify(user))
+    })
+  }
+
 
   const getExperience = async () => {
     API.get(`/experience/${id}`).then((res) => {
       setExperience(res.data.data)
       return res.data.data
     }).then((res) => {
-      getUser();
+      getUser();    
       const experiencePdis = res.pdis;
 
       if (experiencePdis.length) {
@@ -83,7 +92,9 @@ const ExperienceDetail = () => {
     if (actualUser.favoriteExperience.indexOf(experience._id) === -1) {
       API.patch(`/user/${user._id}`, newExperience);
     }
-getUser()
+getUser();
+getFavorites();
+
   }
 
   const removeFavorite = async () => {
@@ -96,6 +107,7 @@ getUser()
     console.log(newFavoriteExperience)
     API.patch(`/user/${user._id}`, newExperience); 
     getUser() /* arreglar aqui, se clicka 2 veces*/
+    getFavorites();
   }
 
 
@@ -120,25 +132,24 @@ getUser()
           <p> {experience.description}</p>
           <div className='price'>
             <p>  {experience.price}€</p>
-            
-            {!showFav ?
-              <button onClick={() => removeFavorite()}>-Borrar favorito</button>
-              : <button onClick={() => addFavorite()}>Añadir a favorito</button>}
-
-
+           
           </div>
+            <div className='add'> 
+               {!showFav ?
+              <button onClick={() => removeFavorite()  }>👎🏿</button>
+              :  <button onClick={() => addFavorite()  }>👍🏻</button>}
+              </div>
         </div>
       </div>
-      <div className='PDI'>
+       <div className='PDI '>
         <div className='puntos'>
           <h2> Puntos de interés </h2>
         </div>
         <div className='pdi'>
-          {pdis.length ? pdis.map((pdi) => <PdiCard pdi={pdi} key={pdi._id} />) : <p></p>}
+          {pdis.length ? pdis.map((pdi) => <PdiCard pdi={pdi} key={pdi._id} />) : <p></p>}      
         </div>
+        
       </div>
-
-
     </figure>
 
 

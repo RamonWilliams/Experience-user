@@ -13,14 +13,10 @@ import PdiDetail from "./pages/PdiDetail/PdiDetail"
 import Profile from "./pages/Profile/Profile"
 import './App.css'
 import Pdi from "./pages/Pdi/Pdi"
-
-
-
-
+import Favorites from "./pages/Favorites/Favorites"
 
 
 const App = () => {
-
 
   return (
     <JwtContextProvider >
@@ -33,10 +29,12 @@ const App = () => {
             <Route path="/register" element={<Form />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<RequireAuth> <Profile /> </RequireAuth>} /> 
-            <Route path="/experience" element={<RequireAuth><Experience /></RequireAuth>} />
-            <Route path="/experience/:id" element={<RequireAuth><ExperienceDetail /></RequireAuth>} /> 
-            <Route path="/pdi" element={<RequireAuth><Pdi /></RequireAuth>} />          
-            <Route path="/pdi/:id" element={<RequireAuth><PdiDetail /></RequireAuth>} />             
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/experience/:id" element={<ExperienceDetail />} /> 
+            <Route path="/pdi" element={<Pdi />} />          
+            <Route path="/pdi/:id" element={<PdiDetail />} /> 
+            <Route path="/favorites" element={<Favorites/> }/> 
+                        
           </Routes>
         </Router>
         <Footer />

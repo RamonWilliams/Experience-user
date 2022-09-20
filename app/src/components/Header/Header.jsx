@@ -33,31 +33,33 @@ return (
         </Link>
       </li> </>):null}
       
+    
+      {user?(<><button onClick={()=>navigate("/favorites")} className='logout'>Mis Favoritos</button></>):null}
       {user?( <><li>
       <Link to="/profile"> <button>Perfil</button> </Link>
       </li></>):null }
-
+      {user?(<><button onClick={() => logout() & navigate("/")} className='logout'>Cerrar Sesión</button></>):null}
+      
       {user ?(<>
-      {user.avatar !== "undefined" ? ( <img src={user.avatar} alt="Avatar"/> 
+      {user.avatar !== "undefined" ? ( <img src={user.avatar} alt="Logo" className='phtoProfile'/> 
       ) : null}        
-          <button onClick={() => logout() & navigate("/")} className='logout'>Logout</button>         
+                   
       </>)
-      :(<>   
-        <li>
-      <Link to="/login"> <button>Login</button></Link>
-      </li>       
-
-      <li>
+      :(<>  
+       
+       <li>
       <Link to="/register"><button>Regístrate</button></Link>
       </li>
+
+        <li>
+      <Link to="/login"> <button>Iniciar sesión</button></Link>
+      </li>       
+
+     
       </> 
      
     )  
-    }
-      
-      
-      
-    
+    }   
 
   </ul>
 </header>

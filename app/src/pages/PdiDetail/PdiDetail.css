@@ -2,10 +2,10 @@
     width: 100%;
     display: flex;
     justify-content:space-evenly;
-    align-items: center;
-  
+    align-items: center;  
     gap: 20px;
     flex-wrap: wrap;
+    margin-bottom: 5rem;
     
 }
 .conteinerInfoP{  
