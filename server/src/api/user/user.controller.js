@@ -20,7 +20,7 @@ const getAll = async (req, res, next) => {
 const getById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const user = await User.findById(id).populate("experiences");
+    const user = await User.findById(id);
     if (!user) return next(setError(404, "User not found"));
     return res.json({
       status: 200,
@@ -35,7 +35,7 @@ const getById = async (req, res, next) => {
 const getByUserName = async (req, res, next) => {
   try {
     const { username } = req.params;
-    const user = await User.find({ username: username }).populate("experience");
+    const user = await User.find({ username: username }).populate("favoriteExperience");
     if (!user) return next(setError(404, "User not found"));
     return res.json({
       status: 200,

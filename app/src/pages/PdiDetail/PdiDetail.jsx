@@ -40,12 +40,19 @@ const PdiDetail = () => {
                   </div>      
                 </div> 
             </div>  
-        </figure>        
+      
+     
         <div className='mapa'>
-         {pdi.name && pdi.lat && pdi.lng?( <Geolocation geolocationValues={pdi}/>):(<p>No hay</p>)}
+          <div className='mapaDos'>
+           <h2>Mapa</h2>
+          </div>
+          <div className='mapaTres'>
+           {pdi.name && pdi.lat && pdi.lng?( <Geolocation geolocationValues={pdi}/>):(<p>No hay</p>)}
          
          
+          </div>
         </div>
+       </figure>     
         </>
 
       )
