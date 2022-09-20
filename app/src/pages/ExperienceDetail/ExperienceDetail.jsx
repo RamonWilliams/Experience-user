@@ -98,9 +98,9 @@ console.log(user)
     }, []);   
    
     return (                                 
-      <>
+    
          <figure className='detail'>
-             <div className='conteinerInfo'>
+          <div className='conteinerInfo'>
                <div className='imageDetail'> 
                  <img src={ experience.image } alt={ experience.name } />
                </div>
@@ -114,16 +114,20 @@ console.log(user)
                  <button onClick={() => removeFavorite()}>-Borrar favorito</button>
                  </div> 
                </div> 
-              </div> 
-           </figure>
-                  
-         <div className='puntos'>
-             <h2> Puntos de interés </h2>         
-         </div>
+            </div> 
+             <div className='PDI'>
+              <div className='puntos'>
+               <h2> Puntos de interés </h2>         
+              </div>
            <div className='pdi'>
             {pdis.length ? pdis.map((pdi) => <PdiCard pdi={pdi} key={pdi._id} /> ):<p></p> }            
-           </div>        
-           </>
+           </div> 
+          </div>
+       
+           
+        </figure>
+                  
+        
 );
 }
 
