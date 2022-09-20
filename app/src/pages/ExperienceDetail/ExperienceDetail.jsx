@@ -8,12 +8,21 @@ import PdiCard from '../../components/PdiCard/PdiCard';
 
 
 const ExperienceDetail = () => {
-    
+    const [actualUser, setActualUser] = useState({});
     const {user} = useContext(JwtContext);
     const { id } = useParams();
     const [ experience, setExperience ] = useState({});
     const [ pdis, setPdis ] = useState([]);
     
+    
+    const getUser = async () =>{
+      API.get(`/user/${user._id}`).then((res)=>{
+        setActualUser(res.data.data.user)
+      })
+    }
+    useEffect(()=>{
+      getUser();
+    },[])
 
     const getExperience = async() => {
         API.get(`/experience/${id}`).then(( res )=> {
@@ -63,9 +72,9 @@ setPdis([res.data.data])
        }
 
         const addFavorite = async () =>{
-console.log(user)
+           console.log(user)
            const newExperience = {
-            favoriteExperience: [...user.favoriteExperience, experience._id]  
+            favoriteExperience: [...actualUser.favoriteExperience, experience._id]  
           };
          if ( user.favoriteExperience.indexOf(experience._id) === -1 ) {
           API.patch(`/user/${user._id}`, newExperience);
@@ -74,7 +83,7 @@ console.log(user)
         }
 
         const removeFavorite = async () =>{
-          const tempFavoriteExperience = [...user.favoriteExperience]
+          const tempFavoriteExperience = [...actualUser.favoriteExperience]
           const elementToDeletePos = tempFavoriteExperience.indexOf(
             experience._id
         );

@@ -19,10 +19,10 @@
     margin-bottom: 5%;  
     border: 2px solid black;
 }
-.imageDetail{    
+.imageDetail{     
+    margin: 15px; 
     height: 350px;
-    width: 500px;    
-  
+    width: 500px;     
 }
 .imageDetail > img{    
     height:100%;
