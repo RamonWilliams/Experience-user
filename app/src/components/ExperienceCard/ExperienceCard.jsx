@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const ExperienceCard = ({ experience }) => {
-
+console.log(experience)
   return (
     <Link to={`/experience/${experience._id}`}>
     <figure className="carta">            

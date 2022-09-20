@@ -11,4 +11,14 @@
     align-items: center;
     gap: 4rem;   
 }
+.general-experience{
+    margin-bottom: 7rem;
+}
+
+.buscador{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
 

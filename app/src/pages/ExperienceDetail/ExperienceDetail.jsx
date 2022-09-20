@@ -17,11 +17,12 @@ const ExperienceDetail = () => {
 
 
 
-  const getUser = async () => {
+  const getUser = async (defaultExperience) => {
     API.get(`/user/${user._id}`).then((res) => {
       console.log(res)
       setActualUser(res.data.data.user);
-      if(res.data.data.user.favoriteExperience.includes(experience._id)){
+      const localExperience = Object.keys(experience).length === 0 ? defaultExperience : experience ;
+      if(res.data.data.user.favoriteExperience.includes(localExperience._id)){
         setShowFav(false);
        } else {setShowFav(true)};
     })
@@ -29,7 +30,7 @@ const ExperienceDetail = () => {
   const getFavorites = async () =>{
     API.get(`/user/username/${user.username}`).then((res)=>{
       console.log(res.data.data);
-      const user = res.data.data
+      const user = res.data.data.user[0];
       localStorage.setItem("user", JSON.stringify(user))
     })
   }
@@ -40,7 +41,7 @@ const ExperienceDetail = () => {
       setExperience(res.data.data)
       return res.data.data
     }).then((res) => {
-      getUser();    
+      getUser(res);    
       const experiencePdis = res.pdis;
 
       if (experiencePdis.length) {
