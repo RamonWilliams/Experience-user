@@ -55,8 +55,7 @@ const Login = () => {
                             message: "La contraseña debe de tener al menos 6 caracteres",
                         }
                     })} />
-                    {errors.password && <span>{errors.password.message}</span>}
-                    {errors.password && <span>{errors.password.message}</span>}
+                    {errors.password && <span>{errors.password.message}</span>}                
                     <button type="submit" className="button-login">Acceder</button>
                 </form>
             </section>

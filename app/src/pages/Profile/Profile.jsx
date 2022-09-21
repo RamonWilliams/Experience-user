@@ -12,33 +12,26 @@ const Profile = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     let navigate = useNavigate();
 
-    // const deleteUser = () => {
+    const deleteUser = () => {
 
-    //     API.delete(` /user/${user._id}`).then((res) => {
-    //         console.log(res)
-    //         logout();
-    //         if (res) {
-    //             navigate("/");
+         API.delete(` /user/${user._id}`).then((res) => {
+             console.log(res)
+             logout();
+            if (res) {
+                navigate("/");
 
-    //         }
+             }
 
-    //     })
+         })
 
-    // };
+    }
 
     const defaultValues = {
         fullname: user.fullname,
         username: user.username,
         password: user.password,        
         email: user.email,
-        description: user.description,
-
-        // avatar: user.avatar,       
-    //     nationality: user.nationality,
-    //     location: user.location,
-    //     address: user.address,    //   
-    //     phone: user.phone,
-    //     description: user.description,
+        description: user.description,     
 
     }
 
@@ -55,8 +48,7 @@ const Profile = () => {
             console.log(res)
             if (res) {
                 navigate("/login");
-
-            }
+                        }
 
 
         })
@@ -70,7 +62,8 @@ const Profile = () => {
          <div className="profile">
                 <form onSubmit={handleSubmit(formSubmit)} className="formularioProf">
                         <label htmlFor="fullname">Nombre completo</label>
-                        <input type="text" id="fullname" name="fullname"  {...register("fullname", {
+                       
+                        <input type="text" id="fullname" name="fullname" defaultValue={defaultValues}  {...register("fullname", {
                             required: {
                                 value: true,
                                 message: "Necesitas este campo",
@@ -79,7 +72,7 @@ const Profile = () => {
                         {errors.fullname && <span>{errors.fullname.message}</span>}
 
                         <label htmlFor="username">Nombre de usuario</label>
-                        <input type="text" id="username" name="username"  {...register("username", {
+                        <input type="text" id="username" name="username" defaultValue={defaultValues} {...register("username", {
                             required: {
                                 value: true,
                                 message: "Necesitas este campo",}
@@ -87,7 +80,7 @@ const Profile = () => {
                         {errors.username && <span>{errors.username.message}</span>}
 
                         <label htmlFor="password">Password</label>
-                        <input type="password" id="password" name="password"  {...register("password", {
+                        <input type="password" id="password" name="password" defaultValue={defaultValues}  {...register("password", {
                             required: {
                                 value: true,
                                 message: "La contraseña debe de tener al menos 6 caracteres",
@@ -99,7 +92,7 @@ const Profile = () => {
 
 
                         <label htmlFor="email">Email</label>
-                        <input type="email" id="email" name="email"  {...register("email", {
+                        <input type="email" id="email" name="email" defaultValue={defaultValues} {...register("email", {
                             required: {
                                 value: true,
                                 message: "El email debe ser válido",
@@ -111,7 +104,7 @@ const Profile = () => {
 
 
                         <label htmlFor="avatar">Avatar</label>
-                        <input type="file" id="avatar" name="avatar"  {...register("avatar", {
+                        <input type="file" id="avatar" name="avatar" defaultValue={defaultValues}  {...register("avatar", {
                             required: {
                                 value: true,
                                 message: "Necesitas este campo",
@@ -122,7 +115,7 @@ const Profile = () => {
 
 
                         <label htmlFor="description">Descripción </label>
-                        <input type="text" id="description" name="description" {...register("description", {
+                        <input type="text" id="description" name="description" defaultValue={defaultValues}{...register("description", {
                             required: {
                                 value: true,
                                 message: "Necesitas este campo",
@@ -131,7 +124,7 @@ const Profile = () => {
                         })} /> {errors.description && <span>{errors.description.message}</span>}
 
                         <label htmlFor="favoriteExperiencie">Experiencias Favoritas </label>
-                        <input type="text" id="favoriteExperience" name="favoriteExperience"{...register("favoriteExperience", {
+                        <input type="text" id="favoriteExperience" name="favoriteExperience" defaultValue={defaultValues}{...register("favoriteExperience", {
                             required: {
                                 value: true,
                                 message: "Necesitas este campo",

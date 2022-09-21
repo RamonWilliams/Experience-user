@@ -40,11 +40,13 @@ console.log(user)
           style={{ width: step === 1 ? "33.3%" : step == 2 ? "66.6%" : "100%" }}
         ></div>
       </div>
-      {step === 1 && (<SingUp saveUser={saveUser} user={user}></SingUp>)}
+      
+      {step === 1 && (<SingUp saveUser={saveUser} user={user}></SingUp>)}      
       {step === 2 && (<PersonalInfo saveUser={saveUser} user={user}></PersonalInfo>)}
       {step === 3 && (<OtherInfo saveUser={saveUser} user={user}></OtherInfo>)}
 
       <div className='buttons'>
+        
       {step === 1 && (<button type="button" onClick={nextStep}>Siguiente</button>)}
       {step !== 1 && (<button type="button" onClick={prevStep}>Volver</button>)}
       {step === 2 && (<button type="button" onClick={nextStep}>Siguiente</button>)}     

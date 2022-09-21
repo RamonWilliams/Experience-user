@@ -10,7 +10,7 @@ const Geolocation = ({geolocationValues}) => {
 
   return (
      
-     <MapContainer center={array} zoom={50} scrollWheelZoom={false}>
+     <MapContainer center={array} zoom={10} scrollWheelZoom={false}>
        <TileLayer
          attribution={osmProvider.maptiler.attribution}
          url={osmProvider.maptiler.url}

@@ -29,11 +29,11 @@ const App = () => {
             <Route path="/register" element={<Form />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<RequireAuth> <Profile /> </RequireAuth>} /> 
-            <Route path="/experience" element={<Experience />} />
+            <Route path="/experience" element={<RequireAuth><Experience /></RequireAuth>} />
             <Route path="/experience/:id" element={<ExperienceDetail />} /> 
-            <Route path="/pdi" element={<Pdi />} />          
-            <Route path="/pdi/:id" element={<PdiDetail />} /> 
-            <Route path="/favorites" element={<Favorites/> }/>                         
+            <Route path="/pdi" element={<RequireAuth><Pdi /> </RequireAuth>} />          
+            <Route path="/pdi/:id" element={<RequireAuth><PdiDetail /></RequireAuth>} /> 
+            <Route path="/favorites" element={<RequireAuth><Favorites/></RequireAuth> }/>                         
           </Routes>
         </Router>
         <Footer />
