@@ -5,7 +5,7 @@
     align-items: center;  
     gap: 20px;
     flex-wrap: wrap;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
     
 }
 .conteinerInfoP{  
@@ -15,8 +15,8 @@
     border-radius: 8px;    
     justify-content: center;
     align-items: center;
-    width: 800px;
-    height:500px; 
+    width: 650px;
+    height:400px; 
     margin-top: 70px;
     margin-bottom: 5%;  
     
@@ -42,27 +42,43 @@
     width: 60%;
     margin-left: 20px; 
     
+    
 }
 .descriptionP > h2 >h3 >p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .descriptionP > h2{
-    margin-top: 40px;
-    font-size:30px ;
-    margin-bottom: 10px;
+    margin-top: 30px;
+    font-size:24px ;
+    margin-bottom: 8x;
 }
 .descriptionP > h3{
-    font-size:22px;
-    margin-top: 1px;
+    font-size:20px;
+    
 }
 .descriptionP > p{
-    font-size: 18px ;
+    font-size: 16px ;
     margin: 30px;
 }
+.priceP {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 15px;       
+}
+.priceP > p {
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(185, 32, 32);
+    margin-right: 10px;
+}
 .mapa{
-    
-    width: 600px;
-    margin-bottom: 20px;
+    height:400px ;
+    width: 400px;
+    margin-bottom: 15px;
 }
 .mapaDos {
     display: flex;
@@ -74,7 +90,7 @@
 }
 .mapaTres > h2 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size:32px ;
+    font-size:26px ;
 }
 
 .mapaTres{
@@ -84,57 +100,56 @@
    margin-bottom: 5rem;   
 }
 @media (max-width: 992px){
-    .conteinerInfoP{      
-        border: 1px solid rgba(231, 219, 219, 0.998);
+    .conteinerInfoP{  
+       
         display: flex;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.107);
-        border-radius: 8px;        
+        border-radius: 8px;    
         justify-content: center;
-        align-items: center;    
-        width:800px;
-        height:550px;     
-        margin-top: 20px;
-        margin-bottom: 50px;      
-    }    
-    .imageDetailP{        
+        align-items: center;
+        width: 450px;
+        height:400px; 
+        margin-top: 70px;
+        margin-bottom: 5%;  
+        
+    }
+    .imageDetailP{     
+        margin: 15px; 
         height: 300px;
-        width: 400px;    
-        margin-left: 25px;
-        display: flex;        
-        justify-content: center;
-        align-items: center;   
-    }    
-    .imageDetailP > img{        
+        width: 400px;     
+    }
+    .imageDetailP > img{    
         height:100%;
-        width: 100%;      
+        width: 100%;  
         object-fit: cover;
         border-radius: 5px;   
-        border: 1px solid rgba(26, 24, 24, 0.559);   
-    }   
-    .descriptionP{      
+        border: 1px solid rgba(26, 24, 24, 0.559);
+    }
+    .descriptionP{  
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;    
-        height: 400px;
-        width: 600px;
-        margin-left: 20px;
-    } 
+        justify-content: center;
+        height: 100%;
+        width: 60%;
+        margin-left: 20px; 
+        
+        
+    }
     .descriptionP > h2 >h3 >p {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
     .descriptionP > h2{
-        margin-top: 50px;
-        font-size:25px ;
-        margin-bottom: 10px;
+        margin-top: 24px;
+        font-size:20px ;
+        
     }
     .descriptionP > h3{
-        font-size:20px;
-        margin-top: 2px;
+        font-size:16px;
+        
     }
-    
     .descriptionP > p{
-        font-size: 16px ;
+        font-size: 10px ;
         margin: 30px;
     }
     .priceP {
@@ -142,23 +157,20 @@
         align-items: flex-end;
         justify-content: flex-end;
         width: 100%;
-        height: 200px;
-        margin-bottom: 15px;
-        margin-right: 40px;       
-    } 
+        height: 90px;
+        margin-bottom: 15px;       
+    }
     .priceP > p {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bolder;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         color: rgb(185, 32, 32);
-    }  
-  
-    
+        margin-right: 10px;
+    }
     .mapa{
-    
-        width: 600px;
-        margin-bottom: 20px;
-        border: 1px solid rgb(32, 30, 30);
+        height:400px ;
+        width: 400px;
+        margin-bottom: 15px;
     }
     .mapaDos {
         display: flex;
@@ -167,11 +179,10 @@
         justify-content: center;
         margin-top: 20px;
         margin-bottom: 3rem;
-        
     }
     .mapaTres > h2 {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size:32px ;
+        font-size:26px ;
     }
     
     .mapaTres{
@@ -179,8 +190,6 @@
        justify-content: center;
        flex-wrap: wrap;
        margin-bottom: 5rem;   
-       border: 1px solid rgb(32, 30, 30);
-
     }
 }
 
@@ -257,7 +266,7 @@
     
         width: 400px;
         
-        border: 3px solid rgb(30, 32, 30);
+        
     }
     .mapaDos {
         display: flex;
@@ -266,13 +275,13 @@
         justify-content: center;
         margin-top: 20px;
         margin-bottom: 3rem;
-        border: 1px solid rgb(32, 30, 30);
+    
         
     }
     .mapaTres > h2 {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size:25px ;
-        border: 1px solid rgb(25, 201, 113);
+       
     }
     
     .mapaTres{
@@ -280,7 +289,7 @@
        justify-content: center;
        flex-wrap: wrap;
         
-       border: 1px solid rgb(165, 9, 9);
+
 
     }
 
@@ -421,8 +430,8 @@
     .mapa{
     height: 500px ;
         width: 600px;
-        margin-bottom: 20px;
-        border: 1px solid rgb(96, 138, 53);
+        margin-bottom:5px;
+       
     }
     .mapaDos {
         display: flex;
@@ -430,13 +439,13 @@
         align-items: center;
         justify-content: center;
         
-        margin-bottom: 3rem;
-        border: 1px solid rgb(53, 112, 138);
+        margin-bottom: 1rem;
+     
         
     }
     .mapaTres > h2 {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size:32px ;
+        font-size:20px ;
     }
     
     .mapaTres{
@@ -444,7 +453,7 @@
        justify-content: center;
        flex-wrap: wrap;
        margin-bottom: 5rem;   
-       border: 1px solid rgb(32, 30, 30);
+      
 
     }
 }    
