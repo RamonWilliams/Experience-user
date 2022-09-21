@@ -137,8 +137,8 @@ getFavorites();
           </div>
             <div className='add'> 
                {!showFav ?
-              <button onClick={() => removeFavorite()  }>👎🏿</button>
-              :  <button onClick={() => addFavorite()  }>👍🏻</button>}
+              <button onClick={() => removeFavorite()  }>💓</button>
+              :  <button onClick={() => addFavorite()  }>❌</button>}
               </div>
         </div>
       </div>

@@ -78,7 +78,7 @@
     display: flex;
     justify-content: flex-end;
 }
-.add> a > button{
+.add>  button{
     border: none;
     background: transparent;
     width: 50px;
@@ -92,12 +92,13 @@
     margin-right: 5px; 
     margin-bottom: 5px;   
 }
-.add> a> button:hover{
+.add>  button:hover{
    transition: all 0.4s ease-in-out;
    transform: scale(1.1);
+   cursor: pointer;
 }
 .PDI{        
-    border:  8px solid black;
+    
     justify-content: center;
 }
 .puntos {
@@ -207,7 +208,7 @@
        flex-wrap: wrap;
        margin-bottom:100px;       
     }   
-    .add> a > button{        
+    .add>  button{        
         border: none;
         background: transparent;
         width: 25px;
@@ -308,7 +309,7 @@
        flex-wrap: wrap;
        margin-bottom:80px;       
     }   
-    .add> a > button{        
+    .add>  button{        
         border: none;
         background: transparent;
         width: 15px;
@@ -409,7 +410,7 @@
        flex-wrap: wrap;
        margin-bottom:80px;       
     }   
-    .add> a > button{        
+    .add>  button{        
         border: none;
         background: transparent;
         width: 15px;
